@@ -1,0 +1,55 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+http:
+  base_url: !secret http_base_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+mobile_app:
+
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  max_retries: 3
+  default_measurement: state
+
+
+mqtt:
+  broker: a0d7b954-mqtt
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  client_id: home-assistant
+  
+
+# webostv:
+#   host: 192.168.1.57
+#   turn_on_action:
+#     service: wake_on_lan.send_magic_packet
+#     data:
+#       mac: "64:95:6c:14:0c:4c"
+
+media_player: !include mediaplayer.yaml
+
+knx:
+
+light: !include light.yaml
+
+sensor: !include sensor.yaml

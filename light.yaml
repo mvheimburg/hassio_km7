@@ -1,0 +1,139 @@
+- platform: knx
+  name: 'Koridor'
+  address: '0/0/100'
+  state_address: '0/1/100'
+  brightness_address: '0/3/100'
+  brightness_state_address: '0/4/100' 
+
+- platform: knx
+  name: 'Bad nede'
+  address: '0/0/110'
+  state_address: '0/1/110'
+  brightness_address: '0/3/110'
+  brightness_state_address: '0/4/110' 
+
+- platform: knx
+  name: 'Vaskerom'
+  address: '0/0/120'
+  state_address: '0/1/120'
+  brightness_address: '0/3/120'
+  brightness_state_address: '0/4/120' 
+
+- platform: knx
+  name: 'Grov Garderode'
+  address: '0/0/130'
+  state_address: '0/1/130'
+  brightness_address: '0/3/130'
+  brightness_state_address: '0/4/130' 
+
+- platform: knx
+  name: 'Teknisk'
+  address: '0/0/140'
+  state_address: '0/1/140'
+  brightness_address: '0/3/140'
+  brightness_state_address: '0/4/140' 
+
+- platform: knx
+  name: 'Sov Ludvig'
+  address: '0/0/150'
+  state_address: '0/1/150'
+  brightness_address: '0/3/150'
+  brightness_state_address: '0/4/150' 
+
+- platform: knx
+  name: 'Sov Lila'
+  address: '0/0/160'
+  state_address: '0/1/160'
+  brightness_address: '0/3/160'
+  brightness_state_address: '0/4/160' 
+
+- platform: knx
+  name: 'Sov Voksen'
+  address: '0/0/170'
+  state_address: '0/1/170'
+  brightness_address: '0/3/170'
+  brightness_state_address: '0/4/170' 
+
+- platform: knx
+  name: 'Herje'
+  address: '0/0/180'
+  state_address: '0/1/180'
+  brightness_address: '0/3/180'
+  brightness_state_address: '0/4/180' 
+
+- platform: knx
+  name: 'Kjokken'
+  address: '0/0/200'
+  state_address: '0/1/200'
+  brightness_address: '0/3/200'
+  brightness_state_address: '0/4/200' 
+
+- platform: knx
+  name: 'KjokkenOy'
+  address: '0/0/201'
+  state_address: '0/1/201'
+  # brightness_address: '0/3/201'
+  # brightness_state_address: '0/4/201' 
+
+- platform: knx
+  name: 'Manhattan'
+  address: '0/0/204'
+  state_address: '0/1/204'
+  brightness_address: '0/3/204'
+  brightness_state_address: '0/4/204' 
+
+- platform: knx
+  name: 'Spisebord'
+  address: '0/0/205'
+  state_address: '0/1/205'
+  # brightness_address: '0/3/205'
+  # brightness_state_address: '0/4/205' 
+
+- platform: knx
+  name: 'TV Stue'
+  address: '0/0/210'
+  state_address: '0/1/210'
+  brightness_address: '0/3/210'
+  brightness_state_address: '0/4/210' 
+
+- platform: knx
+  name: 'Trappegang'
+  address: '0/0/211'
+  state_address: '0/1/211'
+  brightness_address: '0/3/211'
+  brightness_state_address: '0/4/211' 
+
+- platform: knx
+  name: 'Marset'
+  address: '0/0/212'
+  state_address: '0/1/212'
+  # brightness_address: '0/3/212'
+  # brightness_state_address: '0/4/212' 
+
+- platform: knx
+  name: 'Bad oppe tak'
+  address: '0/0/230'
+  state_address: '0/1/230'
+  brightness_address: '0/3/230'
+  brightness_state_address: '0/4/230' 
+
+- platform: knx
+  name: 'Bad oppe pendel'
+  address: '0/0/231'
+  state_address: '0/1/231'
+  # brightness_address: '0/3/231'
+  # brightness_state_address: '0/4/231' 
+
+- platform: knx
+  name: 'Walk in'
+  address: '0/0/240'
+  state_address: '0/1/240'
+  brightness_address: '0/3/240'
+  brightness_state_address: '0/4/240' 
+
+- platform: knx
+  name: 'Sov Matilde'
+  address: '0/0/250'
+  state_address: '0/1/250'
+  brightness_address: '0/3/250'
+  brightness_state_address: '0/4/250' 

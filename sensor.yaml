@@ -1,0 +1,52 @@
+- platform: knx
+  name: heating.valve.setpkt.coridor
+  state_address: '1/0/100'
+  type: percent
+
+- platform: knx
+  name: heating.valve.feedback.coridor
+  state_address: '1/1/100'
+  type: percent
+
+- platform: knx
+  name: heating.valve.setpkt.play
+  state_address: '1/0/180'
+  type: percent
+
+- platform: knx
+  name: heating.valve.feedback.play1
+  state_address: '1/1/180'
+  type: percent
+
+- platform: knx
+  name: heating.valve.feedback.play2
+  state_address: '1/1/181'
+  type: percent
+
+- platform: knx
+  name: heating.valve.setpkt.living
+  state_address: '1/0/200'
+  type: percent
+
+- platform: knx
+  name: heating.valve.feedback.living1
+  state_address: '1/1/210'
+  type: percent
+
+- platform: knx
+  name: heating.valve.feedback.living2
+  state_address: '1/1/211'
+  type: percent
+
+- platform: knx
+  name: heating.valve.feedback.kitchen
+  state_address: '1/1/200'
+  type: percent
+
+- platform: knx
+  name: heating.valve.feedback.stairway
+  state_address: '1/1/212'
+  type: percent
+
+
+

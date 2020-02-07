@@ -1,0 +1,8 @@
+# - platform: webostv
+#   host: 192.168.1.57
+#   turn_on_action:
+#     service: wake_on_lan.send_magic_packet
+#     data:
+#       mac: "64:95:6c:14:0c:4c"
+
+- platform: denonavr
