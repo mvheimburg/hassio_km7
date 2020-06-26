@@ -1,0 +1,34 @@
+title: Cooking
+icon: mdi:information-outline
+cards:
+  - type: vertical-stack
+    cards:
+    - type: entities
+      name: Kaffe
+      entities:
+        - switch.kaffemaskin
+        - sensor.kaffemaskin_duration
+        - sensor.kaffemaskin_elapsed_program_time
+        - switch.kaffemaskin_program_caffelatte
+        - switch.kaffemaskin_program_cappuccino
+        - switch.kaffemaskin_program_coffee
+        - switch.kaffemaskin_program_espresso
+        - switch.kaffemaskin_program_espressomacchiato
+        - switch.kaffemaskin_program_lattemacchiato
+        - sensor.kaffemaskin_program_progress
+        - sensor.kaffemaskin_remaining_program_time
+    - type: entities
+      name: Stek-kombi
+      entities:
+        - switch.stekeovn
+        - binary_sensor.stekeovn_door
+        - sensor.stekeovn_duration
+        - sensor.stekeovn_elapsed_program_time
+        - switch.stekeovn_program_600watt
+        - switch.stekeovn_program_hotair
+        - switch.stekeovn_program_pizzasetting
+        - switch.stekeovn_program_preheating
+        - sensor.stekeovn_program_progress
+        - switch.stekeovn_program_topbottomheating
+        - sensor.stekeovn_remaining_program_time
+

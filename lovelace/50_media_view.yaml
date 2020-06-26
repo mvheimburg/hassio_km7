@@ -1,0 +1,11 @@
+title: Media
+icon: mdi:information-outline
+
+cards:
+  - type: custom:layout-card
+    layout: vertical
+    cards:
+      - type: horizontal-stack
+        cards:
+        - type: media-control
+          entity: media_player.kjokken

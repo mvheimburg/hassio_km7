@@ -1,0 +1,42 @@
+
+resources:
+  - url: /community_plugin/lovelace-card-tools/card-tools.js
+    type: module
+
+  - url: /community_plugin/lovelace-layout-card/layout-card.js
+    type: module
+
+  - url: /community_plugin/lovelace-slider-entity-row/slider-entity-row.js
+    type: module
+  
+  - url: /hacsfiles/custom-header/custom-header.js
+    type: module
+    
+  - url: /local/hass-xiaomi-mi-flora-and-flower-care/hass-xiaomi-mi-flora-and-flower-care.js
+    type: js
+
+
+title: Home
+background: var(--background-image)
+views:
+  - !include lovelace/00_home_view.yaml
+  # - !include lovelace/10_home_info_view.yaml
+  - !include lovelace/20_lights_view.yaml
+  - !include lovelace/30_climate_view.yaml
+  - !include lovelace/40_cooking_view.yaml
+  - !include lovelace/50_media_view.yaml
+  - !include lovelace/60_plants_view.yaml
+  - !include lovelace/70_matilde_view.yaml
+  # - !include lovelace/31_valve_graphs.yaml
+  # - !include lovelace/40_camera_view.yaml
+  # - !include lovelace/3d_printer.yaml
+  # - !include lovelace/80_automations_view.yaml
+  # - !include lovelace/99_settings_view.yaml
+  # - !include lovelace/102_nest_dashboard.yaml
+
+  # - !include lovelace/media.yaml
+  # - !include lovelace/isa.yaml
+  # - !include lovelace/stefan.yaml
+  # - !include lovelace/climate.yaml
+  # - !include lovelace/surveillance.yaml
+  # - !include lovelace/cats.yaml

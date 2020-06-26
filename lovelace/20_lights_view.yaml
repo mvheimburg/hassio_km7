@@ -1,0 +1,142 @@
+title: Lights
+icon: mdi:lightbulb-on
+cards:
+
+  - type: horizontal-stack
+    cards:
+      - type: entity-button
+        name: Nede
+        entity: light.downstairs_lights
+        icon: mdi:home-floor-0
+        tap_action:
+          action: none
+        hold_action:
+          action: call-service
+          service: light.turn_off
+          service_data:
+            entity_id: light.downstairs_lights
+      - type: entity-button
+        name: Oppe
+        entity: light.upstairs_lights
+        icon: mdi:home-floor-1
+        tap_action:
+          action: none
+        hold_action:
+          action: call-service
+          service: light.turn_off
+          service_data:
+            entity_id: light.upstairs_lights
+
+  - type: vertical-stack
+    cards:
+    - type: entities
+      title: Oppe
+      show_header_toggle: false
+      entities:
+        - entity: light.kitchen_roof
+          type: custom:slider-entity-row
+          icon: mdi:track-light
+          name: Kjokkentak
+          toggle: true
+        - entity: light.kitchen_island
+          name: Kjokkenøy
+          icon: mdi:ceiling-light
+          toggle: true
+        - entity: light.kitchen_manhattan
+          type: custom:slider-entity-row
+          icon: mdi:track-light
+          name: Manhattan
+          toggle: true
+        - entity: light.kitchen_dining
+          icon: mdi:globe-light
+          name: Spisebord
+          toggle: true
+        - entity: light.living_room_tv
+          type: custom:slider-entity-row
+          icon: mdi:track-light
+          name: TV stue
+          toggle: true
+        - entity: light.hallway_stairs
+          type: custom:slider-entity-row
+          icon: mdi:track-light
+          name: Trappegang
+          toggle: true
+        - entity: light.hallway_wall
+          icon: mdi:home-lightbulb-outline
+          name: Vegg i gang
+          toggle: true
+        - entity: light.bathroom_u_roof
+          type: custom:slider-entity-row
+          icon: mdi:spotlight
+          name: Bad tak
+          toggle: true
+        - entity: light.bathroom_u_pend
+          icon: mdi:globe-light
+          name: Bad pendel
+          toggle: true
+        - entity: light.walk_in
+          icon: mdi:led-strip-variant
+          name: Garderobe
+          toggle: true
+        - entity: light.bedroom_matilde
+          type: custom:slider-entity-row
+          icon: mdi:vanity-light
+          name: Sov Matilde
+          toggle: true
+    - type: entities
+      title: Nede
+      show_header_toggle: false
+      entities:
+        - entity: light.coridor
+          type: custom:slider-entity-row
+          icon: mdi:track-light
+          name: Koridor
+          toggle: true
+        - entity: light.bathroom_d
+          type: custom:slider-entity-row
+          icon: mdi:spotlight
+          name: Bad tak
+          toggle: true
+        - entity: light.washing_room
+          type: custom:slider-entity-row
+          icon: mdi:wall-sconce-flat
+          name: Vaskerom
+          toggle: true
+        - entity: light.wardrobe
+          type: custom:slider-entity-row
+          icon: mdi:wall-sconce-flat
+          name: Garderobe
+          toggle: true
+        - entity: light.utility
+          type: custom:slider-entity-row
+          icon: mdi:wall-sconce-flat
+          name: Teknisk
+          toggle: true
+        - entity: light.bedroom_ludvig
+          type: custom:slider-entity-row
+          icon: mdi:spotlight
+          name: Sov Ludvig
+          toggle: true
+        - entity: light.bedroom_lila
+          type: custom:slider-entity-row
+          icon: mdi:spotlight
+          name: Sov Lila
+          toggle: true
+        - entity: light.bedroom_adult
+          type: custom:slider-entity-row
+          icon: mdi:spotlight
+          name: Sov Voksen
+          toggle: true
+        - entity: light.ravage
+          type: custom:slider-entity-row
+          icon: mdi:led-strip-variant
+          name: Herjerom
+          toggle: true
+    - type: entities
+      title: Garasje
+      show_header_toggle: false
+      entities:
+        - entity: light.garasjeport
+          icon: mdi:track-light
+          name: Garasjeport
+          toggle: true

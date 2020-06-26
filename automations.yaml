@@ -1,1 +1,11 @@
-[]
+- id: '1581329605337'
+  alias: '[System] Hass Started'
+  description: ''
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      name: palms
+    service: frontend.set_theme

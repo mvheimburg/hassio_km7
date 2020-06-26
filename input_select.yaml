@@ -1,0 +1,11 @@
+coffee_select:
+  name: Select your brew
+  options:
+    - kaffemaskin_program_caffelatte
+    - kaffemaskin_program_cappuccino
+    - kaffemaskin_program_coffee
+    - kaffemaskin_program_espresso
+    - kaffemaskin_program_espressomacchiato
+    - kaffemaskin_program_lattemacchiato
+  initial: kaffemaskin_program_coffee
+  icon: mdi:coffee
