@@ -22,3 +22,5 @@ tts
 www/
 custom_components/
 themes/
+*.db-shm
+*.db-wal
