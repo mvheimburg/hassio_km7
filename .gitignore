@@ -24,3 +24,4 @@ custom_components/
 themes/
 *.db-shm
 *.db-wal
+.HA-VERSION
