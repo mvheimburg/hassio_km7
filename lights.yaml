@@ -1,0 +1,151 @@
+- platform: knx
+  name: coridor
+  address: '0/0/100'
+  state_address: '0/1/100'
+  brightness_address: '0/3/100'
+  brightness_state_address: '0/4/100'
+
+- platform: knx
+  name: bathroom_d
+  address: '0/0/110'
+  state_address: '0/1/110'
+  brightness_address: '0/3/110'
+  brightness_state_address: '0/4/110'
+
+- platform: knx
+  name: washing_room
+  address: '0/0/120'
+  state_address: '0/1/120'
+  brightness_address: '0/3/120'
+  brightness_state_address: '0/4/120'
+
+- platform: knx
+  name: wardrobe
+  address: '0/0/130'
+  state_address: '0/1/130'
+  brightness_address: '0/3/130'
+  brightness_state_address: '0/4/130'
+
+- platform: knx
+  name: utility
+  address: '0/0/140'
+  state_address: '0/1/140'
+  brightness_address: '0/3/140'
+  brightness_state_address: '0/4/140'
+
+- platform: knx
+  name: bedroom.ludvig
+  address: '0/0/150'
+  state_address: '0/1/150'
+  brightness_address: '0/3/150'
+  brightness_state_address: '0/4/150'
+
+- platform: knx
+  name: bedroom.lila
+  address: '0/0/160'
+  state_address: '0/1/160'
+  brightness_address: '0/3/160'
+  brightness_state_address: '0/4/160'
+
+- platform: knx
+  name: bedroom.adult
+  address: '0/0/170'
+  state_address: '0/1/170'
+  brightness_address: '0/3/170'
+  brightness_state_address: '0/4/170'
+
+- platform: knx
+  name: ravage
+  address: '0/0/180'
+  state_address: '0/1/180'
+  brightness_address: '0/3/180'
+  brightness_state_address: '0/4/180'
+
+- platform: knx
+  name: kitchen.roof
+  address: '0/0/200'
+  state_address: '0/1/200'
+  brightness_address: '0/3/200'
+  brightness_state_address: '0/4/200'
+
+- platform: knx
+  name: kitchen.bench
+  address: '0/0/201'
+  state_address: '0/1/201'
+  brightness_address: '0/3/201'
+  brightness_state_address: '0/4/201'
+
+- platform: knx
+  name: kitchen.island
+  address: '0/0/202'
+  state_address: '0/1/202'
+
+- platform: knx
+  name: kitchen.manhattan
+  address: '0/0/204'
+  state_address: '0/1/204'
+  brightness_address: '0/3/204'
+  brightness_state_address: '0/4/204'
+
+- platform: knx
+  name: kitchen.dining
+  address: '0/0/205'
+  state_address: '0/1/205'
+
+- platform: knx
+  name: living_room.tv
+  address: '0/0/210'
+  state_address: '0/1/210'
+  brightness_address: '0/3/210'
+  brightness_state_address: '0/4/210'
+
+- platform: knx
+  name: hallway.stairs
+  address: '0/0/211'
+  state_address: '0/1/211'
+  brightness_address: '0/3/211'
+  brightness_state_address: '0/4/211'
+
+- platform: knx
+  name: hallway.wall
+  address: '0/0/213'
+  state_address: '0/1/213'
+
+- platform: knx
+  name: bathroom_u.roof
+  address: '0/0/230'
+  state_address: '0/1/230'
+  brightness_address: '0/3/230'
+  brightness_state_address: '0/4/230'
+
+- platform: knx
+  name: bathroom_u.pend
+  address: '0/0/231'
+  state_address: '0/1/231'
+
+- platform: knx
+  name: bathroom_u.mirror
+  address: '0/0/232'
+  state_address: '0/1/232'
+  brightness_address: '0/3/232'
+  brightness_state_address: '0/4/232'
+
+- platform: knx
+  name: walk_in
+  address: '0/0/240'
+  state_address: '0/1/240'
+
+- platform: knx
+  name: bedroom.matilde
+  address: '0/0/250'
+  state_address: '0/1/250'
+  brightness_address: '0/3/250'
+  brightness_state_address: '0/4/250'
+
+
+
+# - platform: mqtt
+# name: "Garasjeport"- platform: knx
+#   command_topic: "garage/light/cmd"
+#   state_topic: "garage/light/state"
+#   optimistic: false

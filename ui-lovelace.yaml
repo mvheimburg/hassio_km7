@@ -1,19 +1,29 @@
 
-resources:
-  - url: /community_plugin/lovelace-card-tools/card-tools.js
-    type: module
+# resources:
+#   - url: /hacsfiles/lovelace-card-tools/card-tools.js
+#     type: module
 
-  - url: /community_plugin/lovelace-layout-card/layout-card.js
-    type: module
+#   - url: /hacsfiles/lovelace-layout-card/layout-card.js
+#     type: module
 
-  - url: /community_plugin/lovelace-slider-entity-row/slider-entity-row.js
-    type: module
+#   - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
+#     type: module
   
-  - url: /hacsfiles/custom-header/custom-header.js
-    type: module
+#   - url: /hacsfiles/custom-header/custom-header.js
+#     type: module
+        
+#   - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+#     type: module
+
+#   - url: /hacsfiles/button-card/button-card.js
+#     type: module
+
+#   - url: /hacsfiles/lovelace-fold-entity-row/fold-entity-row.js
+#     type: module
     
-  - url: /local/hass-xiaomi-mi-flora-and-flower-care/hass-xiaomi-mi-flora-and-flower-care.js
-    type: js
+#   - url: /hacsfiles/hass-xiaomi-mi-flora-and-flower-care/hass-xiaomi-mi-flora-and-flower-care.js
+#     type: js
+
 
 
 title: Home
@@ -27,6 +37,7 @@ views:
   - !include lovelace/50_media_view.yaml
   - !include lovelace/60_plants_view.yaml
   - !include lovelace/70_matilde_view.yaml
+  - !include lovelace/80_energy_view.yaml
   # - !include lovelace/31_valve_graphs.yaml
   # - !include lovelace/40_camera_view.yaml
   # - !include lovelace/3d_printer.yaml

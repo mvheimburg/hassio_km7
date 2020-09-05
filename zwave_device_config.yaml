@@ -1,0 +1,75 @@
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_2:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_3:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_4:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_5:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_6:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_7:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_8:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_9:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_10:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_11:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_12:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_13:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_14:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_15:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_previous_reading_16:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_current_2:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_current_3:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_current_4:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_power_2:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_power_3:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_power_4:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_voltage_2:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_voltage_3:
+  ignored: true
+  polling_intensity: 0
+sensor.aeon_labs_zw095_home_energy_meter_gen5_voltage_4:
+  ignored: true
+  polling_intensity: 0

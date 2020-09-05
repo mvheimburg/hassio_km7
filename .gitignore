@@ -19,5 +19,6 @@ lib
 deps
 tts
 .uuid
-
-
+www/
+custom_components/
+themes/

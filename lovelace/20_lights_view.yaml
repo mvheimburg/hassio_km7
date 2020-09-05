@@ -1,7 +1,6 @@
 title: Lights
 icon: mdi:lightbulb-on
 cards:
-
   - type: horizontal-stack
     cards:
       - type: entity-button
@@ -38,6 +37,11 @@ cards:
           icon: mdi:track-light
           name: Kjokkentak
           toggle: true
+        - entity: light.kitchen_bench
+          type: custom:slider-entity-row
+          icon: mdi:track-light
+          name: Kjokkenbenk
+          toggle: true
         - entity: light.kitchen_island
           name: Kjokkenøy
           icon: mdi:ceiling-light
@@ -69,6 +73,11 @@ cards:
           type: custom:slider-entity-row
           icon: mdi:spotlight
           name: Bad tak
+          toggle: true
+        - entity: light.bathroom_u_mirror
+          type: custom:slider-entity-row
+          icon: mdi:spotlight
+          name: Bad speil
           toggle: true
         - entity: light.bathroom_u_pend
           icon: mdi:globe-light

@@ -1,0 +1,27 @@
+title: Energy
+icon: mdi:flash
+cards:
+  - type: vertical-stack
+    cards:
+
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.power_heatpump
+      hours_to_show: 24
+      points_per_hour: 60
+      show:
+        icon: false
+
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.current_rack
+      show:
+        icon: false
+      hours_to_show: 24
+      points_per_hour: 60
+
+    - type: vertical-stack
+      cards:
+      - type: entities
+        name: Kaffe
+        entities:

@@ -9,3 +9,42 @@
   - data:
       name: palms
     service: frontend.set_theme
+- id: '1595059870707'
+  alias: Lock main door
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.door_lock_main
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data: {}
+    entity_id: lock.mqtt_lock
+    service: lock.lock
+- id: '1595059955329'
+  alias: Unlock main door
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.door_lock_main
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data: {}
+    entity_id: lock.mqtt_lock
+    service: lock.unlock
+- id: '1598510256757'
+  alias: Morning
+  description: ''
+  trigger:
+  - at: 06:00
+    platform: time
+  condition: []
+  action:
+  - device_id: 4e145bde12b94cf0bd8808b34e29b973
+    domain: switch
+    entity_id: switch.kaffemaskin_power
+    type: turn_on
+  mode: single

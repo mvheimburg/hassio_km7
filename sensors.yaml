@@ -1,0 +1,272 @@
+- platform: miflora
+  mac: !secret flower_mac_figue
+  name: figue_mi
+  force_update: true
+  median: 3
+  monitored_conditions:
+    - moisture
+    - light
+    - temperature
+    - conductivity
+    - battery
+
+- platform: huahuacaocao
+  plant_id: "ficus carica"
+  name: "figue_hua"
+  sensors:
+    moisture: sensor.figue_mi_moisture
+    battery: sensor.figue_mi_battery
+    temperature: sensor.figue_mi_temperature
+    conductivity: sensor.figue_mi_conductivity
+    brightness: sensor.figue_mi_light_intensity
+
+
+- platform: miflora
+  mac: !secret flower_mac_citrus
+  name: citrus_mi
+  force_update: true
+  median: 3
+  monitored_conditions:
+    - moisture
+    - light
+    - temperature
+    - conductivity
+    - battery
+    
+- platform: huahuacaocao
+  plant_id: "fortunella margarita"
+  name: "citrus_hua"
+  sensors:
+    moisture: sensor.citrus_mi_moisture
+    battery: sensor.citrus_mi_battery
+    temperature: sensor.citrus_mi_temperature
+    conductivity: sensor.citrus_mi_conductivity
+    brightness: sensor.citrus_mi_light_intensity
+
+
+- platform: knx
+  name: heating.valve.setpkt.coridor
+  state_address: '1/2/100'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.setpkt.bathroom_d
+  state_address: '1/2/110'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.setpkt.play
+  state_address: '1/2/180'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.setpkt.living_area
+  state_address: '1/2/200'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.setpkt.bathroom_u
+  state_address: '1/2/230'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.setpkt.bedroom_u
+  state_address: '1/2/240'
+  type: 'percent'
+
+
+- platform: knx
+  name: heating.valve.feedback.coridor
+  state_address: '1/3/100'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.feedback.play1
+  state_address: '1/3/180'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.feedback.play2
+  state_address: '1/3/181'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.feedback.kitchen
+  state_address: '1/3/200'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.feedback.living1
+  state_address: '1/3/210'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.feedback.living2
+  state_address: '1/3/211'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.feedback.stairway
+  state_address: '1/3/212'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.feedback.bathroom_u
+  state_address: '1/3/230'
+  type: 'percent'
+- platform: knx
+  name: heating.valve.feedback.bedroom_u
+  state_address: '1/3/240'
+  type: 'percent'
+
+
+
+### POWER ###
+- platform: knx
+  name: power.current.feedback.rack
+  state_address: '3/2/0'
+  type: 'DPT-7'
+- platform: knx
+  name: power.current.feedback.dishwasher
+  state_address: '3/2/1'
+  type: 'DPT-7'
+- platform: knx
+  name: power.current.feedback.fridge
+  state_address: '3/2/2'
+  type: 'DPT-7'
+- platform: knx
+  name: power.current.feedback.combioven_fridgeroom
+  state_address: '3/2/3'
+  type: 'DPT-7'
+- platform: knx
+  name: power.current.feedback.coffe_oven
+  state_address: '3/2/4'
+  type: 'DPT-7'
+- platform: knx
+  name: power.current.feedback.washingmachine1
+  state_address: '3/2/5'
+  type: 'DPT-7'
+- platform: knx
+  name: power.current.feedback.washingmachine2
+  state_address: '3/2/6'
+  type: 'DPT-7'
+- platform: knx
+  name: power.current.feedback.ventilation
+  state_address: '3/2/7'
+  type: 'DPT-7'
+
+- platform: knx
+  name: power.energy.feedback.rack
+  state_address: '3/3/0'
+  type: 'DPT-12'
+- platform: knx
+  name: power.energy.feedback.dishwasher
+  state_address: '3/3/1'
+  type: 'DPT-12'
+- platform: knx
+  name: power.energy.feedback.fridge
+  state_address: '3/3/2'
+  type: 'DPT-12'
+- platform: knx
+  name: power.energy.feedback.combioven_fridgeroom
+  state_address: '3/3/3'
+  type: 'DPT-12'
+- platform: knx
+  name: power.energy.feedback.coffe_oven
+  state_address: '3/3/4'
+  type: 'DPT-12'
+- platform: knx
+  name: power.energy.feedback.washingmachine1
+  state_address: '3/3/5'
+  type: 'DPT-12'
+- platform: knx
+  name: power.energy.feedback.washingmachine2
+  state_address: '3/3/6'
+  type: 'DPT-12'
+- platform: knx
+  name: power.energy.feedback.ventilation
+  state_address: '3/3/7'
+  type: 'DPT-12'
+
+
+  
+- platform: template
+  sensors:
+    
+    # energy_heatpump:
+    #   friendly_name: "energy heatpump"
+    #   unit_of_measurement: 'kWh'
+    #   value_template: "{{ states('sensor.aeon_labs_zw095_home_energy_meter_gen5_energy')|float }}"
+
+    # power_heatpump:
+    #   friendly_name: "power heatpump"
+    #   unit_of_measurement: 'W'
+    #   value_template: "{{ states('sensor.aeon_labs_zw095_home_energy_meter_gen5_power')|float }}"
+
+    energy_rack:
+      friendly_name: "energy rack"
+      unit_of_measurement: 'kWh'
+      value_template: "{{ states('sensor.power_energy_feedback_rack')|float / 1000 }}"
+
+    energy_fridge:
+      friendly_name: "energy fridge"
+      unit_of_measurement: 'kWh'
+      value_template: "{{ states('sensor.power_energy_feedback_fridge')|float / 1000 }}"
+
+    energy_dishwasher:
+      friendly_name: "energy dishwasher"
+      unit_of_measurement: 'kWh'
+      value_template: "{{ states('sensor.power_energy_feedback_dishwasher')|float / 1000 }}"
+
+    energy_combioven_fridgeroom:
+      friendly_name: "energy combioven_fridgeroom"
+      unit_of_measurement: 'kWh'
+      value_template: "{{ states('sensor.power_energy_feedback_combioven_fridgeroom')|float / 1000 }}"
+
+    energy_coffe_oven:
+      friendly_name: "energy coffe_oven"
+      unit_of_measurement: 'kWh'
+      value_template: "{{ states('sensor.power_energy_feedback_coffe_oven')|float / 1000 }}"
+
+    energy_washingmachine2:
+      friendly_name: "energy washingmachine2"
+      unit_of_measurement: 'kWh'
+      value_template: "{{ states('sensor.power_energy_feedback_washingmachine2')|float / 1000 }}"
+
+    energy_washingmachine1:
+      friendly_name: "energy washingmachine1"
+      unit_of_measurement: 'kWh'
+      value_template: "{{ states('sensor.power_energy_feedback_washingmachine1')|float / 1000 }}"
+
+    energy_ventilation:
+      friendly_name: "energy ventilation"
+      unit_of_measurement: 'kWh'
+      value_template: "{{ states('sensor.power_energy_feedback_ventilation')|float / 1000 }}"
+
+    current_rack:
+      friendly_name: "current rack"
+      unit_of_measurement: 'A'
+      value_template: "{{ states('sensor.power_current_feedback_rack')|float / 1000 }}"
+
+    current_fridge:
+      friendly_name: "current fridge"
+      unit_of_measurement: 'A'
+      value_template: "{{ states('sensor.power_current_feedback_fridge')|float / 1000 }}"
+
+    current_dishwasher:
+      friendly_name: "current dishwasher"
+      unit_of_measurement: 'A'
+      value_template: "{{ states('sensor.power_current_feedback_dishwasher')|float / 1000 }}"
+
+    current_combioven_fridgeroom:
+      friendly_name: "current combioven_fridgeroom"
+      unit_of_measurement: 'A'
+      value_template: "{{ states('sensor.power_current_feedback_combioven_fridgeroom')|float / 1000 }}"
+
+    current_coffe_oven:
+      friendly_name: "current coffe_oven"
+      unit_of_measurement: 'A'
+      value_template: "{{ states('sensor.power_current_feedback_coffe_oven')|float / 1000 }}"
+
+    current_washingmachine1:
+      friendly_name: "current washingmachine1"
+      unit_of_measurement: 'A'
+      value_template: "{{ states('sensor.power_current_feedback_washingmachine1')|float / 1000 }}"
+      
+    current_washingmachine2:
+      friendly_name: "current washingmachine2"
+      unit_of_measurement: 'A'
+      value_template: "{{ states('sensor.power_current_feedback_washingmachine2')|float / 1000 }}"
+
+    current_ventilation:
+      friendly_name: "current ventilation"
+      unit_of_measurement: 'A'
+      value_template: "{{ states('sensor.power_current_ventilation')|float / 1000 }}"

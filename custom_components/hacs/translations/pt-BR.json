@@ -3,7 +3,7 @@
         "about": "Sobre",
         "add": "adicionar",
         "appdaemon": "AppDaemon",
-        "appdaemon_apps": "AppDaemon Apps",
+        "appdaemon_apps": "Aplicativos AppDaemon",
         "appdaemon_plural": "Aplicativos AppDaemon",
         "background_task": "Tarefa em segundo plano em execução, esta página será recarregada quando terminar.",
         "check_log_file": "Verifique seu arquivo de log para obter mais detalhes.",
@@ -27,9 +27,9 @@
         "plugin": "Lovelace",
         "plugin_plural": "Elementos do Lovelace",
         "plugins": "Elementos do Lovelace",
-        "python_script": "Python Script",
+        "python_script": "Script Python",
         "python_script_plural": "Scripts python",
-        "python_scripts": "Python Scripts",
+        "python_scripts": "Scripts python",
         "repositories": "Repositórios",
         "repository": "Repositório",
         "settings": "configurações",
@@ -50,13 +50,13 @@
         "step": {
             "user": {
                 "data": {
-                    "appdaemon": "Habilitar AppDaemon apps descoberta & rastreamento",
+                    "appdaemon": "Habilitar descoberta & rastreamento de apps AppDaemon",
                     "netdaemon": "Habilitar NetDaemon apps descoberta & rastreamento",
-                    "python_script": "Habilitar python_scripts descoberta & rastreamento",
+                    "python_script": "Habilitar descoberta & rastreamento de python_scripts",
                     "sidepanel_icon": "Icone do painel lateral",
                     "sidepanel_title": "Titulo do painel lateral",
-                    "theme": "Habilitar temas descoberta & rastreamento",
-                    "token": "GitHub Token de acesso pessoal"
+                    "theme": "Habilitar descoberta & rastreamento de temas",
+                    "token": "Token de acesso pessoal do GitHub"
                 },
                 "description": "Se você preciar de ajuda com a configuração olhe aqui: https:\/\/hacs.xyz\/docs\/configuration\/start",
                 "title": "HACS (Home Assistant Community Store)"
@@ -178,7 +178,7 @@
             "user": {
                 "data": {
                     "appdaemon": "Habilitar AppDaemon apps descoberta & rastreamento",
-                    "country": "Filtro pelo código do país.",
+                    "country": "Filtrar pelo código do país.",
                     "debug": "Ative a depuração.",
                     "experimental": "Ativar recursos experimentais",
                     "netdaemon": "Habilitar NetDaemon apps descoberta & rastreamento",
@@ -193,12 +193,12 @@
     "repository_banner": {
         "config_flow": "Essa integração oferece suporte ao config_flow, o que significa que agora você pode acessar a seção de integração da sua interface do usuário para configurá-lo.",
         "config_flow_title": "Configuração de interface do usuário suportada",
-        "integration_not_loaded": "Esta integração não é carregada no Home Assistant.",
+        "integration_not_loaded": "Esta integração não está carregada no Home Assistant.",
         "no_restart_required": "Não é necessário reiniciar",
         "not_loaded": "Não carregado",
-        "plugin_not_loaded": "Este plugin não foi adicionado aos seus recursos do Lovelace.",
+        "plugin_not_loaded": "Este elemento não é adicionado aos seus recursos do Lovelace.",
         "restart": "Você precisa reiniciar o Home Assistant.",
-        "restart_pending": "Reiniciar pendente"
+        "restart_pending": "Reinicialização pendente"
     },
     "repository_card": {
         "dismiss": "Dispensar",
@@ -231,7 +231,7 @@
         "installed": "Instalado",
         "lovelace_copy_example": "Copie este exemplo para seu clipboard",
         "lovelace_instruction": "Quando você adicionar isso à sua configuração do lovelace, use este",
-        "lovelace_no_js_type": "Não foi possível determinar o tipo deste plug-in, verifique o repositório.",
+        "lovelace_no_js_type": "Não foi possível determinar o tipo desse elemento, verifique o repositório.",
         "newest": "O mais novo",
         "note_appdaemon": "Você ainda precisa adicioná-lo ao seu arquivo 'apps.yaml'",
         "note_installed": "Quando instalado, ele estará localizado em",
@@ -239,7 +239,7 @@
         "note_plugin": "você ainda precisará adicioná-lo à sua configuração do lovelace ('ui-lovelace.yaml' ou o editor de configuração da interface do usuário)",
         "note_plugin_post_107": "você ainda precisará adicioná-lo à sua configuração do lovelace ('configuration.yaml' ou o editor de recursos '\/config \/lovelace\/resources')",
         "open_issue": "Open issue",
-        "open_plugin": "Plugin aberto",
+        "open_plugin": "Elemento aberto",
         "reinstall": "Reinstalar",
         "repository": "Repositório",
         "restart_home_assistant": "Reiniciar Home Assistant",
@@ -249,6 +249,8 @@
         "upgrade": "Melhorar"
     },
     "search": {
+        "installed": "Procure repositórios instalados",
+        "installed_new": "Procure repositórios instalados ou novos",
         "placeholder": "Procurar repositório"
     },
     "sections": {

@@ -16,20 +16,11 @@ scene: !include scenes.yaml
 input_select: !include input_select.yaml
 
 http:
-  base_url: !secret http_base_url
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
 
-mobile_app:
+influxdb: !include influxdb.yaml
 
-influxdb:
-  host: a0d7b954-influxdb
-  port: 8086
-  database: homeassistant
-  username: !secret influxdb_username
-  password: !secret influxdb_password
-  max_retries: 3
-  default_measurement: state
 
 
 mqtt:
@@ -37,10 +28,6 @@ mqtt:
   username: !secret mqtt_username
   password: !secret mqtt_password
   client_id: home-assistant
-  
-homeconnect:
-  client_id: !secret homeconnect_client_id
-  client_secret: !secret homeconnect_client_secret
 
 lock:
   - platform: mqtt
@@ -58,100 +45,48 @@ cover:
     qos: 0
 
 
-# hacs:
-#   token: !secret github_access_token
-#   appdaemon: true
-
-
 media_player: !include mediaplayer.yaml
 
-
-climate:
-
+  
 knx:
-  config_file: 'xknx.yaml'
+  # config_file: 'xknx.yaml'
 
 
-light:
-  - platform: mqtt
-    name: "Garasjeport"
-    command_topic: "garage/light/cmd"
-    state_topic: "garage/light/state"
-    optimistic: false
-# light:
-# light: !include light.yaml
+climate: !include climate.yaml
 
-# sensor:
-# sensor: !include sensor.yaml
+
+light: !include lights.yaml
+
 
 frontend:
   themes: !include_dir_merge_named themes
 
+
 lovelace_gen:
+
 
 lovelace:
   mode: yaml
+  resources: !include lovelace/hacs-resources.yaml
+
 
 huahuacaocao:
   username: !secret huahuacaocao_user
   password: !secret huahuacaocao_password
   region: EU
 
-sensor:
-  - platform: miflora
-    mac: !secret flower_mac_figue
-    name: figue_mi
-    force_update: true
-    median: 3
-    monitored_conditions:
-      - moisture
-      - light
-      - temperature
-      - conductivity
-      - battery
-  - platform: huahuacaocao
-    plant_id: "ficus carica"
-    name: "figue_hua"
-    sensors:
-      moisture: sensor.figue_mi_moisture
-      battery: sensor.figue_mi_battery
-      temperature: sensor.figue_mi_temperature
-      conductivity: sensor.figue_mi_conductivity
-      brightness: sensor.figue_mi_light_intensity
+
+sensor: !include sensors.yaml
+
+binary_sensor: !include binary_sensors.yaml
 
 
-  - platform: miflora
-    mac: !secret flower_mac_citrus
-    name: citrus_mi
-    force_update: true
-    median: 3
-    monitored_conditions:
-      - moisture
-      - light
-      - temperature
-      - conductivity
-      - battery
-  - platform: huahuacaocao
-    plant_id: "fortunella margarita"
-    name: "citrus_hua"
-    sensors:
-      moisture: sensor.citrus_mi_moisture
-      battery: sensor.citrus_mi_battery
-      temperature: sensor.citrus_mi_temperature
-      conductivity: sensor.citrus_mi_conductivity
-      brightness: sensor.citrus_mi_light_intensity
+home_connect:
+  client_id: !secret homeconnect_client_id
+  client_secret: !secret homeconnect_client_secret
 
 
-# plant:
-#   figue:
-#     sensors:
-#       moisture: sensor.mqtt_plant_moisture
-#       battery: sensor.mqtt_plant_battery
-#       temperature: sensor.mqtt_plant_temperature
-#       conductivity: sensor.mqtt_plant_conductivity
-#       brightness: sensor.mqtt_plant_brightness
-#     min_moisture: 20
-#     max_moisture: 60
-#     min_battery: 17
-#     min_conductivity: 500
-#     min_temperature: 15
+utility_meter: !include utility_meter.yaml
+
+
+

@@ -1,0 +1,4 @@
+
+- platform: knx
+  name: door_lock.main
+  state_address: '4/0/0'
