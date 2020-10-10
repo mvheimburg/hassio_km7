@@ -3,6 +3,14 @@ icon: mdi:flash
 cards:
   - type: vertical-stack
     cards:
+    
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.real_time_consumption_kjonstad_7
+      hours_to_show: 24
+      points_per_hour: 60
+      show:
+        icon: false
 
     - type: custom:mini-graph-card
       entities:

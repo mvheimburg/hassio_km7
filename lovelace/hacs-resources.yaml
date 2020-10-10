@@ -1,23 +1,26 @@
-- url: /hacsfiles/lovelace-card-tools/card-tools.js
-  type: module
+# - url: /hacsfiles/lovelace-card-tools/card-tools.js
+#   type: module
 
-- url: /hacsfiles/lovelace-layout-card/layout-card.js
-  type: module
+# - url: /hacsfiles/lovelace-layout-card/layout-card.js
+#   type: module
 
 - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
   type: module
 
-- url: /hacsfiles/custom-header/custom-header.js
-  type: module
+# - url: /hacsfiles/custom-header/custom-header.js
+#   type: module
 
 - url: /hacsfiles/button-card/button-card.js
   type: module
      
 - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js?v=0.9.4
   type: module
-
-- url: /hacsfiles/lovelace-fold-entity-row/fold-entity-row.js
+  
+- url: /hacsfiles/simple-thermostat/simple-thermostat.js
   type: module
 
-- url: /hacsfiles/mini-climate-card/mini-climate-card-bundle.js
-  type: module
+# - url: /hacsfiles/lovelace-fold-entity-row/fold-entity-row.js
+#   type: module
+
+# - url: /hacsfiles/mini-climate-card/mini-climate-card-bundle.js
+#   type: module

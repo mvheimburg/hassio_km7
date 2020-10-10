@@ -1,0 +1,12 @@
+tunneling:
+  host: !secret knx_gateway_ip
+  # port: !secret knx_gateway_port
+  # local_ip: !secret homassistant_ip
+
+light: !include knx_light.yaml
+
+sensor: !include knx_sensor.yaml
+
+binary_sensor: !include knx_binarey_sensor.yaml
+
+climate: !include knx_climate.yaml

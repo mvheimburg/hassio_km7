@@ -1,4 +1,8 @@
 
-- platform: knx
-  name: door_lock.main
-  state_address: '4/0/0'
+
+# ##### FOr test purposes. Move to automation when reading correctly
+# - platform: mqtt
+#   state_topic: "bell/ring/cmd"
+#   name: bell
+#   payload_on: "on"
+#   payload_off: "off"

@@ -7,7 +7,7 @@ cards:
       title: Lasogsla
       show_header_toggle: false
       entities:
-        - entity: lock.mqtt_lock
+        - entity: lock.main_door
           icon: mdi:home-lock
           name: Front dor
           toggle: true
@@ -15,7 +15,7 @@ cards:
       title: Garasje
       show_header_toggle: false
       entities:
-        - entity: cover.mqtt_cover
+        - entity: cover.garage_gate
           icon: mdi:home-lock
           name: Garasjeport
         

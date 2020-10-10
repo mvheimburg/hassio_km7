@@ -1,0 +1,16 @@
+ring_bell_day:
+  alias: ring_bell_day
+  mode: single
+  sequence:
+  - data:
+      message: Noen ringer på
+    service: notify.mobile_app_mob_martin
+  - data:
+      volume_level: 0.8
+    entity_id: media_player.huset
+    service: media_player.volume_set
+  - data:
+      media_content_id: https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3
+      media_content_type: music
+    entity_id: media_player.huset
+    service: media_player.play_media

@@ -1,0 +1,76 @@
+- name: coridor
+  temperature_address: '1/1/100'
+  target_temperature_address: '1/0/100'
+  target_temperature_state_address: '1/0/100'
+  min_temp: 18.0
+  max_temp: 28.0
+
+- name: bathroom_d
+  temperature_address: '1/1/110'
+  target_temperature_address: '1/0/110'
+  target_temperature_state_address: '1/0/110'
+  min_temp: 18.0
+  max_temp: 28.0
+
+- name: washing_room 
+  temperature_address: '1/1/120'
+  target_temperature_address: '1/0/120'
+  target_temperature_state_address: '1/0/120'
+  min_temp: 18.0
+  max_temp: 28.0
+
+- name: wardrobe
+  temperature_address: '1/1/130'
+  target_temperature_address: '1/0/120'
+  target_temperature_state_address: '1/0/120'
+  min_temp: 18.0
+  max_temp: 28.0
+
+- name: bedroom.ludvig
+  temperature_address: '1/1/150'
+  target_temperature_address: '1/0/150'
+  target_temperature_state_address: '1/0/150'
+  min_temp: 18.0
+  max_temp: 28.0
+
+- name: bedroom.lila 
+  temperature_address: '1/1/160'
+  target_temperature_address: '1/0/160'
+  target_temperature_state_address: '1/0/160'
+  min_temp: 18.0
+  max_temp: 28.0
+
+- name: bedroom.adult
+  temperature_address: '1/1/170'
+  target_temperature_address: '1/0/170'
+  target_temperature_state_address: '1/0/170'
+  min_temp: 18.0
+  max_temp: 28.0
+
+- name: ravage
+  temperature_address: '1/1/180'
+  target_temperature_address: '1/0/180'
+  target_temperature_state_address: '1/0/180'
+  min_temp: 18.0
+  max_temp: 28.0
+
+- name: living_area
+  temperature_address: '1/1/200'
+  target_temperature_address: '1/0/200'
+  target_temperature_state_address: '1/0/200'
+  min_temp: 18.0
+  max_temp: 28.0
+
+- name: bathroom_u
+  temperature_address: '1/1/230'
+  target_temperature_address: '1/0/230'
+  target_temperature_state_address: '1/0/230'
+  min_temp: 18.0
+  max_temp: 28.0
+
+- name: bedroom.matilde
+  temperature_address: '1/1/240'
+  target_temperature_address: '1/0/240'
+  target_temperature_state_address: '1/0/240'
+  min_temp: 18.0
+  max_temp: 28.0

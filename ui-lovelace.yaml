@@ -33,7 +33,7 @@ views:
   # - !include lovelace/10_home_info_view.yaml
   - !include lovelace/20_lights_view.yaml
   - !include lovelace/30_climate_view.yaml
-  - !include lovelace/40_cooking_view.yaml
+#  - !include lovelace/40_cooking_view.yaml
   - !include lovelace/50_media_view.yaml
   - !include lovelace/60_plants_view.yaml
   - !include lovelace/70_matilde_view.yaml

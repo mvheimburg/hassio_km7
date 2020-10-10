@@ -48,3 +48,19 @@
     entity_id: switch.kaffemaskin_power
     type: turn_on
   mode: single
+- id: '1600064405166'
+  alias: Ring bell day
+  description: ''
+  trigger:
+  - payload: do
+    platform: mqtt
+    topic: bell/ring/toggle
+  condition:
+  - after: 06:00
+    before: '19:00'
+    condition: time
+  action:
+  - data: {}
+    entity_id: script.ring_bell_day
+    service: script.toggle
+  mode: single
