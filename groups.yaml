@@ -1,0 +1,6 @@
+# - light_playing_room:
+#   name: Light Playing Room
+#   enteties:
+#     -light.playing_room_1
+#     -light.playing_room_2
+#     -light.playing_room_3

@@ -6,3 +6,8 @@
 #   name: bell
 #   payload_on: "on"
 #   payload_off: "off"
+
+# - platform: mqtt
+#   name: "main door"
+#   state_topic: "zwave2mqtt/2/48/1/0"
+#   qos: 2

@@ -136,10 +136,22 @@ cards:
           icon: mdi:spotlight
           name: Sov Voksen
           toggle: true
-        - entity: light.ravage
-          type: custom:slider-entity-row
+        - entity: light.playing_room
           icon: mdi:led-strip-variant
           name: Herjerom
+          toggle: true
+    - type: entities
+      title: Utendors
+      show_header_toggle: false
+      entities:
+        - entity: light.outdoor_main_door
+          type: custom:slider-entity-row
+          icon: mdi:led-strip-variant
+          name: Dor
+          toggle: true
+        - entity: light.outdoor_nude
+          icon: mdi:spotlight
+          name: Nude
           toggle: true
     - type: entities
       title: Garasje
@@ -149,3 +161,7 @@ cards:
           icon: mdi:track-light
           name: Garasjeport
           toggle: true
+
+visible:
+  - user: !secret user_id_martin 
+  - user: !secret user_id_trine 

@@ -1,0 +1,19 @@
+title: Jul
+icon: mdi:string-lights
+cards:
+  - type: vertical-stack
+    cards:
+    - type: entities
+      title: Oppe
+      show_header_toggle: false
+      entities:
+        - entity: light.kitchen_windows
+          icon: mdi:star-outline
+          name: Stjerne kjøkken
+        - entity: light.bedroom_matilde_window
+          icon: mdi:star-outline
+          name: Stjerne Matilde
+
+visible:
+  - user: !secret user_id_martin 
+  - user: !secret user_id_trine 

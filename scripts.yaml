@@ -14,3 +14,20 @@ ring_bell_day:
       media_content_type: music
     entity_id: media_player.huset
     service: media_player.play_media
+matilde_alarm:
+  alias: matilde_alarm
+  sequence:
+  - service: light.turn_on
+    entity_id: light.bedroom_matilde
+    data:
+      brightness_pct: 100
+      transition: 20
+  - event: matilde_alarm_triggered
+  - condition: state
+    entity_id: input_select.matilde_alarm_select
+    state: En gang
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.matilde_alarm_select
+      option: Av
+  mode: single

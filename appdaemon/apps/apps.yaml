@@ -2,3 +2,11 @@
 hello_world:
   module: hello
   class: HelloWorld
+
+# halloween_door:
+#   module: candle_light
+#   class: CandleLightWithStrobe
+#   light_entity: light.outdoor_main_door
+#   trigger_entity: input_select.halloween_mode
+#   strobe_condition_entity: input_select.main_door_just_opened
+  

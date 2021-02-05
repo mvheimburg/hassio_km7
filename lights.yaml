@@ -1,9 +1,14 @@
+- platform: group
+  name: playing_room
+  entities:
+    - light.playing_room_1
+    - light.playing_room_2
+    - light.playing_room_3
 
 
-
-
-# - platform: mqtt
-# name: "Garasjeport"- platform: knx
-#   command_topic: "garage/light/cmd"
-#   state_topic: "garage/light/state"
-#   optimistic: false
+- platform: mqtt
+  name: "Garasjeport"
+  command_topic: "garage/light/cmd"
+  state_topic: "garage/light/state"
+  optimistic: false
+  qos: 0

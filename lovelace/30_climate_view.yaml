@@ -2,56 +2,67 @@ title: Climate
 icon: mdi:thermostat
 
 cards:
-  - type: horizontal-stack
+  - type: vertical-stack
     cards:
-      - type: vertical-stack
+      - type: entities
+        name: Ventilasjon
+        entities: 
+          - climate.systemair
+        
+      - type: horizontal-stack
         cards:
-          - type: thermostat
-            entity: climate.coridor
-            name: Koridor
-          - type: custom:mini-graph-card
-            entities:
-            -  sensor.heating_valve_feedback_coridor
-            -  climate.coridor.current_temperature
-            # cards:
-            # - type: thermostat
-            #   entity: climate.coridor
-            #   name: Koridor
-            # - type: custom:mini-graph-card
-            #   entities:
-            #   -  sensor.heating_valve_feedback_coridor
+          - type: vertical-stack
+            cards:
+              - type: thermostat
+                entity: climate.coridor
+                name: Koridor
+              - type: custom:mini-graph-card
+                entities:
+                -  sensor.heating_valve_feedback_coridor
+                -  climate.coridor.current_temperature
+                # cards:
+                # - type: thermostat
+                #   entity: climate.coridor
+                #   name: Koridor
+                # - type: custom:mini-graph-card
+                #   entities:
+                #   -  sensor.heating_valve_feedback_coridor
 
 
-          - type: thermostat
-            entity: climate.bathroom_d
-            name: Bad nede
-          - type: thermostat
-            entity: climate.washing_room
-            name: Vaskerom
-          - type: thermostat
-            entity: climate.wardrobe
-            name: Grovgarderobe
-          - type: thermostat
-            entity: climate.bedroom_ludvig
-            name: Sov Ludvig
-          - type: thermostat
-            entity: climate.bedroom_lila
-            name: Sov Lila
-          - type: thermostat
-            entity: climate.bedroom_adult
-            name: Sov voksen
-          - type: thermostat
-            entity: climate.ravage
-            name: Herjerom
+              - type: thermostat
+                entity: climate.bathroom_d
+                name: Bad nede
+              - type: thermostat
+                entity: climate.washing_room
+                name: Vaskerom
+              - type: thermostat
+                entity: climate.wardrobe
+                name: Grovgarderobe
+              - type: thermostat
+                entity: climate.bedroom_ludvig
+                name: Sov Ludvig
+              - type: thermostat
+                entity: climate.bedroom_lila
+                name: Sov Lila
+              - type: thermostat
+                entity: climate.bedroom_adult
+                name: Sov voksen
+              - type: thermostat
+                entity: climate.ravage
+                name: Herjerom
 
-      - type: vertical-stack
-        cards:
-          - type: thermostat
-            entity: climate.living_area
-            name: Oppholdsrom
-          - type: thermostat
-            entity: climate.bathroom_u
-            name: Bad oppe
-          - type: thermostat
-            entity: climate.bedroom_matilde
-            name: Sov Matilde
+          - type: vertical-stack
+            cards:
+              - type: thermostat
+                entity: climate.living_area
+                name: Oppholdsrom
+              - type: thermostat
+                entity: climate.bathroom_u
+                name: Bad oppe
+              - type: thermostat
+                entity: climate.bedroom_matilde
+                name: Sov Matilde
+
+visible:
+  - user: !secret user_id_martin 
+  - user: !secret user_id_trine 

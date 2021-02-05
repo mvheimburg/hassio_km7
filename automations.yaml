@@ -64,3 +64,227 @@
     entity_id: script.ring_bell_day
     service: script.toggle
   mode: single
+- id: '1603913785136'
+  alias: Candela light main door
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.halloween_mode
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - repeat:
+      until:
+      - condition: state
+        entity_id: input_boolean.halloween_mode
+        state: 'off'
+      sequence:
+      - service: light.turn_on
+        data:
+          brightness: '{{ (range(40, 100)|random) }}'
+          transition: 1
+        entity_id: light.outdoor_main_door
+      - delay: milliseconds {{ (range(400, 2000)|random) }}
+  mode: single
+- id: '1603916033454'
+  alias: Door just opened
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: b1e52f6f191711eb833ce9370c0ab8a2
+    entity_id: binary_sensor.door_main_closed
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    data: {}
+    entity_id: input_boolean.door_just_opened
+  - delay: '2'
+  - service: input_boolean.turn_off
+    data: {}
+    entity_id: input_boolean.door_just_opened
+  mode: single
+- id: '1603997986552'
+  alias: Night Light
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      brightness: 10
+      transition: 10
+    entity_id: light.outdoor_main_door
+  - service: light.turn_on
+    data: {}
+    entity_id: light.outdoor_nude
+  mode: single
+- id: '1603998088469'
+  alias: Night Light End
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    entity_id: light.outdoor_main_door
+  - service: light.turn_off
+    data: {}
+    entity_id: light.outdoor_nude
+  mode: single
+- id: '1603998846225'
+  alias: Increase doorlight
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: b1e52f6f191711eb833ce9370c0ab8a2
+    entity_id: binary_sensor.door_main_closed
+    domain: binary_sensor
+  condition:
+  - condition: and
+    conditions:
+    - condition: sun
+      before: sunrise
+      after: sunset
+    - condition: state
+      state: 'on'
+      entity_id: light.outdoor_main_door
+  action:
+  - service: light.turn_on
+    entity_id: light.outdoor_main_door
+    data:
+      brightness: 80
+      transition: 1
+  mode: single
+- id: '1604082858826'
+  alias: Increase doorlight (Dupliser)
+  description: ''
+  trigger:
+  - type: opened
+    platform: device
+    device_id: b1e52f6f191711eb833ce9370c0ab8a2
+    entity_id: binary_sensor.door_main_closed
+    domain: binary_sensor
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+  action:
+  - service: light.turn_on
+    entity_id: light.outdoor_main_door
+    data:
+      brightness: 80
+      transition: 1
+  mode: single
+- id: '1604159418109'
+  alias: Candela light main door (Duplicate)
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.halloween_mode
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - repeat:
+      until:
+      - condition: state
+        entity_id: input_boolean.halloween_mode
+        state: 'off'
+      sequence:
+      - choose:
+        - conditions:
+          - condition: state
+            entity_id: input_boolean.door_just_opened
+            state: 'on'
+          sequence:
+          - service: light.turn_on
+            data:
+              brightness: 100
+              transition: 0
+            entity_id: light.outdoor_main_door
+          - delay: 'milliseconds: 300'
+          - service: light.turn_off
+            data:
+              transition: 0
+            entity_id: light.outdoor_main_door
+          - delay: 'milliseconds: 300'
+        default:
+        - service: light.turn_on
+          data:
+            brightness: '{{ (range(0, 80)|random) }}'
+            transition: 1
+          entity_id: light.outdoor_main_door
+        - delay: milliseconds {{ (range(300, 2000)|random) }}
+  mode: single
+- id: '1604919943124'
+  alias: Matilde Alarm
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{% set currentTimeInMinutes = ((states(''sensor.time'')[:2] |
+      float) * 60) + (states(''sensor.time'')[3:5] | float) - (states(''sensor.time'')
+      | float) %} {% set alarmTimeInMinutes = ((states(''input_datetime.matilde_alarm_datetime'')[:2]
+      | float) * 60) + (states(''input_datetime.matilde_alarm_datetime'')[3:5] | float)
+      - (states(''input_number.matilde_alarm_duration'') | float) %} {{ currentTimeInMinutes
+      == alarmTimeInMinutes }}'
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: input_select.matilde_alarm_select
+      state: En gang
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_select.matilde_alarm_select
+        state: Hverdager når hjemme
+      - condition: template
+        value_template: '{{ now().weekday() < 5 }}'
+      - condition: state
+        entity_id: person.matilde
+        state: home
+  action:
+  - service: script.matilde_alarm
+    data: {}
+    entity_id: script.matilde_alarm
+  mode: single
+- id: '1608041910083'
+  alias: Set manual ventilation value
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.ventilation_fan_level
+  condition: []
+  action:
+  - service: modbus.write_register
+    data_template:
+      unit: 1
+      address: 1131
+      value: "{% if is_state('input_select.ventilation_fan_level', 'off') %}\n  1\n\
+        {%-elif is_state('input_select.ventilation_fan_level', 'low') %}\n  2\n{%-elif\
+        \ is_state('input_select.ventilation_fan_level', 'normal') %}\n  3\n{%-elif\
+        \ is_state('input_select.ventilation_fan_level', 'high') %}\n  4\n{% endif\
+        \ %}\n"
+  mode: single
+- id: '1609766359131'
+  alias: Garage open notofocation
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: cover.garage_gate
+    to: open
+    for: 00:10:00
+  condition: []
+  action:
+  - service: notify.mobile_app_sm_g986b
+    data:
+      message: Garage open for 10 minutes
+  mode: single

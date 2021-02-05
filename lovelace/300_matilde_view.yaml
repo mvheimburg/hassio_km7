@@ -1,0 +1,26 @@
+title: Media
+icon: mdi:human-female-girl
+
+cards:
+  - type: vertical-stack
+    cards:
+    - type: entities
+      title: Soverom
+      show_header_toggle: false
+      entities:
+        - entity: light.bedroom_matilde
+          type: custom:slider-entity-row
+          icon: mdi:vanity-light
+          name: Sov Matilde
+          toggle: true
+        - entity: light.bedroom_matilde_window
+          icon: mdi:star-outline
+          name: Kjokkenbenk
+
+  - type: custom:lightalarm-card
+    name: 'Alarm'  
+    time_entity: input_datetime.matilde_alarm_datetime
+    mode_entity: input_select.matilde_alarm_select
+    duration_entity: input_number.matilde_alarm_duration
+visible:
+  - user: !secret user_id_matilde

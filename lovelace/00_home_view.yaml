@@ -18,4 +18,5 @@ cards:
         - entity: cover.garage_gate
           icon: mdi:home-lock
           name: Garasjeport
+
         

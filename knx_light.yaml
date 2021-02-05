@@ -1,3 +1,13 @@
+- name: outdoor_main_door
+  address: '0/0/1'
+  state_address: '0/1/1'
+  brightness_address: '0/3/1'
+  brightness_state_address: '0/4/1'
+
+- name: outdoor_nude
+  address: '0/0/2'
+  state_address: '0/1/2'
+
 - name: coridor
   address: '0/0/100'
   state_address: '0/1/100'
@@ -46,11 +56,23 @@
   brightness_address: '0/3/170'
   brightness_state_address: '0/4/170'
 
-- name: ravage
+- name: playing_room_1
   address: '0/0/180'
   state_address: '0/1/180'
-  brightness_address: '0/3/180'
-  brightness_state_address: '0/4/180'
+  rgbw_address: '0/5/180'
+  rgbw_state_address: '0/6/180'
+
+- name: playing_room_2
+  address: '0/0/181'
+  state_address: '0/1/181'
+  rgbw_address: '0/5/181'
+  rgbw_state_address: '0/6/181'
+
+- name: playing_room_3
+  address: '0/0/182'
+  state_address: '0/1/182'
+  rgbw_address: '0/5/182'
+  rgbw_state_address: '0/6/182'
 
 - name: kitchen.roof
   address: '0/0/200'
@@ -77,6 +99,10 @@
 - name: kitchen.dining
   address: '0/0/205'
   state_address: '0/1/205'
+
+- name: kitchen.windows
+  address: '0/0/206'
+  state_address: '0/1/206'
 
 - name: living_room.tv
   address: '0/0/210'
@@ -119,3 +145,7 @@
   state_address: '0/1/250'
   brightness_address: '0/3/250'
   brightness_state_address: '0/4/250'
+
+- name: bedroom.matilde.window
+  address: '0/0/251'
+  state_address: '0/1/251'

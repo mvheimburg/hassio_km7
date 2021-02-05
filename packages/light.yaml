@@ -10,7 +10,7 @@ light:
       - light.bedroom_ludvig
       - light.bedroom_lila
       - light.bedroom_adult
-      - light.ravage
+      - light.playing_room
       
   - platform: group
     name: 'Upstairs lights'
