@@ -1,3 +1,10 @@
+- name: verksted
+  temperature_address: '1/1/10'
+  target_temperature_address: '1/0/10'
+  target_temperature_state_address: '1/0/10'
+  min_temp: 12.0
+  max_temp: 18.0
+
 - name: coridor
   temperature_address: '1/1/100'
   target_temperature_address: '1/0/100'

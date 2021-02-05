@@ -1,51 +1,88 @@
-
-
+- name: heating.valve.setpkt.shed
+  state_address: '1/3/10'
+  type: 'percent'
 - name: heating.valve.setpkt.coridor
-  state_address: '1/2/100'
-  type: 'percent'
-- name: heating.valve.setpkt.bathroom_d
-  state_address: '1/2/110'
-  type: 'percent'
-- name: heating.valve.setpkt.play
-  state_address: '1/2/180'
-  type: 'percent'
-- name: heating.valve.setpkt.living_area
-  state_address: '1/2/200'
-  type: 'percent'
-- name: heating.valve.setpkt.bathroom_u
-  state_address: '1/2/230'
-  type: 'percent'
-- name: heating.valve.setpkt.bedroom_u
-  state_address: '1/2/240'
-  type: 'percent'
-
-
-- name: heating.valve.feedback.coridor
   state_address: '1/3/100'
   type: 'percent'
-- name: heating.valve.feedback.play1
+- name: heating.valve.setpkt.bathroom_d
+  state_address: '1/3/110'
+  type: 'percent'
+- name: heating.valve.setpkt.washing_room
+  state_address: '1/3/120'
+  type: 'percent'
+- name: heating.valve.setpkt.wardrobe
+  state_address: '1/3/130'
+  type: 'percent'
+- name: heating.valve.setpkt.play_1
   state_address: '1/3/180'
   type: 'percent'
-- name: heating.valve.feedback.play2
-  state_address: '1/3/181'
+- name: heating.valve.setpkt.play_2
+  state_address: '1/3/180'
   type: 'percent'
-- name: heating.valve.feedback.kitchen
+- name: heating.valve.setpkt.kitchen
   state_address: '1/3/200'
   type: 'percent'
-- name: heating.valve.feedback.living1
+- name: heating.valve.setpkt.living_1
   state_address: '1/3/210'
   type: 'percent'
-- name: heating.valve.feedback.living2
+- name: heating.valve.setpkt.living_2
   state_address: '1/3/211'
   type: 'percent'
-- name: heating.valve.feedback.stairway
+- name: heating.valve.setpkt.stairway
   state_address: '1/3/212'
   type: 'percent'
-- name: heating.valve.feedback.bathroom_u
+- name: heating.valve.setpkt.office
+  state_address: '1/3/220'
+  type: 'percent'
+- name: heating.valve.setpkt.bathroom_u
   state_address: '1/3/230'
   type: 'percent'
-- name: heating.valve.feedback.bedroom_u
+- name: heating.valve.setpkt.bedroom_u
   state_address: '1/3/240'
+  type: 'percent'
+
+
+- name: heating.valve.feedback.shed
+  state_address: '1/4/10'
+  type: 'percent'
+- name: heating.valve.feedback.coridor
+  state_address: '1/4/100'
+  type: 'percent'
+- name: heating.valve.feedback.bathroom_d
+  state_address: '1/4/110'
+  type: 'percent'
+- name: heating.valve.feedback.washing_room
+  state_address: '1/4/120'
+  type: 'percent'
+- name: heating.valve.feedback.wardrobe
+  state_address: '1/4/130'
+  type: 'percent'
+- name: heating.valve.feedback.play_1
+  state_address: '1/4/180'
+  type: 'percent'
+- name: heating.valve.feedback.play_2
+  state_address: '1/4/180'
+  type: 'percent'
+- name: heating.valve.feedback.kitchen
+  state_address: '1/4/200'
+  type: 'percent'
+- name: heating.valve.feedback.living_1
+  state_address: '1/4/210'
+  type: 'percent'
+- name: heating.valve.feedback.living_2
+  state_address: '1/4/211'
+  type: 'percent'
+- name: heating.valve.feedback.stairway
+  state_address: '1/4/212'
+  type: 'percent'
+- name: heating.valve.feedback.office
+  state_address: '1/4/220'
+  type: 'percent'
+- name: heating.valve.feedback.bathroom_u
+  state_address: '1/4/230'
+  type: 'percent'
+- name: heating.valve.feedback.bedroom_u
+  state_address: '1/4/240'
   type: 'percent'
 
 

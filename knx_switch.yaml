@@ -1,0 +1,41 @@
+- name: heating.valve.rinse.shed
+  address: '1/5/10'
+
+- name: heating.valve.rinse.coridor
+  address: '1/5/100'
+
+- name: heating.valve.rinse.bathroom_d
+  address: '1/5/110'
+
+- name: heating.valve.rinse.washing_room
+  address: '1/5/120'
+
+- name: heating.valve.rinse.wardrobe
+  address: '1/5/130'
+
+- name: heating.valve.rinse.play_1
+  address: '1/5/180'
+
+- name: heating.valve.rinse.play_2
+  address: '1/5/181'
+
+- name: heating.valve.rinse.kitchen
+  address: '1/5/200'
+
+- name: heating.valve.rinse.living_1
+  address: '1/5/210'
+
+- name: heating.valve.rinse.living_2
+  address: '1/5/211'
+
+- name: heating.valve.rinse.stairway
+  address: '1/5/212'
+
+- name: heating.valve.rinse.office
+  address: '1/5/220'
+
+- name: heating.valve.rinse.bathroom_u
+  address: '1/5/230'
+
+- name: heating.valve.rinse.bedroom_u
+  address: '1/5/240'

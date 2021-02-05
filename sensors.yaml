@@ -140,3 +140,114 @@
       value_template: "{{ states('sensor.power_current_ventilation')|float / 1000 }}"
 
 
+    heating_valve_error_shed:
+      friendly_name: 'heating_valve_error_shed'
+      unit_of_measurement: '%'
+      value_template: >-
+          {% set setpkt = sensor.heating_valve_setpkt_shed|float %}
+          {% set feedback = sensor.heating_valve_feedback_shed| float %}
+          {{ setpkt - feedback }}
+
+    heating_valve_error_coridor:
+      friendly_name: 'heating_valve_error_coridor'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_bathroom_d:
+      friendly_name: 'heating_valve_error_bathroom_d'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_washing_room:
+      friendly_name: 'heating_valve_error_washing_room'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_wardrobe:
+      friendly_name: 'heating_valve_error_wardrobe'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_play_1:
+      friendly_name: 'heating_valve_error_play_1'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_play_2:
+      friendly_name: '1/4/180'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_kitchen:
+      friendly_name: '1/4/200'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_living_1:
+      friendly_name: '1/4/210'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_living_2:
+      friendly_name: '1/4/211'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_stairway:
+      friendly_name: '1/4/212'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_office:
+      friendly_name: '1/4/220'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_bathroom_u:
+      friendly_name: '1/4/230'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
+
+    heating_valve_error_bedroom_u:
+      friendly_name: '1/4/240'
+      unit_of_measurement: '%'
+      value_template: >-
+        {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
+        {% set feedback = sensor.heating.valve.feedback.shed| float %}
+        {{ setpkt - feedback }}
