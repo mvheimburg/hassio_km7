@@ -5,11 +5,14 @@
 - url: /hacsfiles/button-card/button-card.js
   type: module
      
-- url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js?v=0.9.4
+- url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
   type: module
   
 - url: /hacsfiles/simple-thermostat/simple-thermostat.js
   type: module
 
 - url: /hacsfiles/lightalarm-card/lightalarm-card.js
+  type: module
+
+- url: /hacsfiles/scheduler-card/scheduler-card.js
   type: module

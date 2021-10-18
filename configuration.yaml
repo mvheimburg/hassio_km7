@@ -3,7 +3,9 @@ default_config:
 
 homeassistant:
   packages: !include_dir_named packages
-
+  time_zone: Europe/Oslo
+  media_dirs:
+    local: /media
 # Text to speech
 tts:
   - platform: google_translate
@@ -16,8 +18,11 @@ input_select: !include input_select.yaml
 
 http:
   # Removed due to NGINX Addon
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
+  #  ssl_certificate: /ssl/fullchain.pem
+  #  ssl_key: /ssl/privkey.pem
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - !secret my_proxy
 
 # influxdb: !include influxdb.yaml
 
@@ -27,13 +32,7 @@ http:
 #   password: !secret mqtt_password
 #   client_id: home-assistant
 
-lock:
-  - platform: mqtt
-    name: main_door
-    command_topic: "door/1/cmd"
-    state_topic: "door/1/state"
-    optimistic: false
-    qos: 0
+lock: !include locks.yaml
 
 cover:
   - platform: mqtt
@@ -77,9 +76,9 @@ home_connect:
 
 sensor: !include sensors.yaml
 
-binary_sensor: !include binary_sensors.yaml
+# binary_sensor: !include binary_sensors.yaml
 
-utility_meter: !include utility_meter.yaml
+# utility_meter: !include utility_meter.yaml
 
 modbus:
   type: serial
@@ -95,3 +94,9 @@ climate:
     slave: 1
 
 # access_control:
+
+panel_iframe:
+  lockmaster:
+    title: "Lockmaster"
+    url: "https://doorcontrol.lvh.duckdns.org"
+

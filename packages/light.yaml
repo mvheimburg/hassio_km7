@@ -29,6 +29,15 @@ light:
       - light.walk_in          
       - light.bedroom_matilde  
 
+  - platform: group
+    name: 'Outdoor lights'
+    entities:
+      - light.outdoor_main_door
+      - light.outdoor_nude
 
-
-       
+  - platform: group
+    name: 'All lights'
+    entities:
+       - light.downstairs_lights
+       - light.upstairs_lights
+       - light.outdoor_lights

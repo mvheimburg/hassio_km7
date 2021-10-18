@@ -1,3 +1,21 @@
+- name: heating.floor_pump
+  address: '2/3/0'
+  state_address: '2/4/0'
+
+- name: heating.cooling_pump
+  address: '2/3/1'
+  state_address: '2/4/1'
+
+- name: heating.cooling_valves
+  address: '2/5/0'
+  state_address: '2/6/0'
+  invert: 'true'
+
+- name: heating.cooling
+  address: '2/0/0'
+  state_address: '2/1/0'
+  invert: 'true'
+
 - name: heating.valve.rinse.shed
   address: '1/5/10'
   state_address: '1/6/10'

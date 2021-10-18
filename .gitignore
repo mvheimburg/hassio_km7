@@ -13,6 +13,7 @@ known_devices.yaml
 .storage/
 OZW_Log.txt
 *.log
+*.log.*
 *.db
 *.db-journal
 lib

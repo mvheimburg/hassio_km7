@@ -1,6 +1,5 @@
 title: Media
 icon: mdi:information-outline
-
 cards:
   - type: custom:layout-card
     layout: vertical

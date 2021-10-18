@@ -1,14 +1,10 @@
 title: Plants
 icon: mdi:flower
-# cards:
-#   - type: vertical-stack
-#     cards:
-#     - type: plant-status
-#       name: "Figue"
-#       entity: plant.figue_hua
-#     - type: plant-status
-#       name: "Citrus"
-#       entity: plant.citrus_hua
+cards:
+  - type: custom:scheduler-card
+    include:
+      - "*growth*"
+
 
 visible:
   - user: !secret user_id_martin 

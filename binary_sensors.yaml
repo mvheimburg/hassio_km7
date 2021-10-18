@@ -1,5 +1,3 @@
-
-
 # ##### FOr test purposes. Move to automation when reading correctly
 # - platform: mqtt
 #   state_topic: "bell/ring/cmd"

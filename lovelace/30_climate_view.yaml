@@ -1,9 +1,20 @@
 title: Climate
 icon: mdi:thermostat
-
 cards:
   - type: vertical-stack
     cards:
+      - type: entities
+        name: Klima
+        entities:
+          - switch.heating_toggle_cooling
+
+      - type: glance
+        entities:
+          - sensor.netatmo_lvh_inn_co2
+          - sensor.netatmo_lvh_inn_humidity
+        show_name: false
+        state_color: true
+        
       - type: entities
         name: Ventilasjon
         entities: 
@@ -12,6 +23,7 @@ cards:
       - type: horizontal-stack
         cards:
           - type: vertical-stack
+            title: Nede
             cards:
               - type: thermostat
                 entity: climate.coridor
@@ -52,6 +64,7 @@ cards:
                 name: Herjerom
 
           - type: vertical-stack
+            title: Oppe
             cards:
               - type: thermostat
                 entity: climate.living_area
@@ -62,6 +75,13 @@ cards:
               - type: thermostat
                 entity: climate.bedroom_matilde
                 name: Sov Matilde
+
+          - type: vertical-stack
+            title: Andre
+            cards:
+              - type: thermostat
+                entity: climate.verksted
+                name: Verksted
 
 visible:
   - user: !secret user_id_martin 

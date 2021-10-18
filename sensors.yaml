@@ -42,142 +42,142 @@
 #     conductivity: sensor.citrus_mi_conductivity
 #     brightness: sensor.citrus_mi_light_intensity
 
-- platform: mqtt
-  name: "power heatpump"
-  state_topic: "zwave2mqtt/3/50/1/2"
-  unit_of_measurement: "W"
-  qos: 2
+# - platform: mqtt
+#   name: "power heatpump"
+#   state_topic: "zwave2mqtt/3/50/1/2"
+#   unit_of_measurement: "W"
+#   qos: 2
 
-- platform: mqtt
-  name: "energy heatpump"
-  state_topic: "zwave2mqtt/3/50/1/0"
-  unit_of_measurement: "kWh"
-  qos: 2
+# - platform: mqtt
+#   name: "energy heatpump"
+#   state_topic: "zwave2mqtt/3/50/1/0"
+#   unit_of_measurement: "kWh"
+#   qos: 2
 
 
-- platform: modbus
-  registers:
-    - name: REG_USERMODE_MANUAL_AIRFLOW_LEVEL_SAF
-      unit_of_measurement: Level
-      slave: 1
-      register: 1131
-    - name: REG_SENSOR_RPM_SAF
-      unit_of_measurement: RPM
-      slave: 1
-      register: 12401
-    - name: REG_SENSOR_RPM_EAF
-      unit_of_measurement: RPM
-      slave: 1
-      register: 12402
-    - name: REG_SENSOR_OAT
-      unit_of_measurement: °C
-      slave: 1
-      register: 12102
-    - name: REG_SENSOR_SAT
-      unit_of_measurement: °C
-      slave: 1
-      register: 12103
-    - name: REG_SENSOR_PDM_EAT_VALUE
-      unit_of_measurement: NA
-      slave: 1
-      register: 12544
-    - name: REG_SENSOR_RHS_PDM
-      unit_of_measurement: NA
-      slave: 1
-      register: 12136
+# - platform: modbus
+#   registers:
+#     - name: REG_USERMODE_MANUAL_AIRFLOW_LEVEL_SAF
+#       unit_of_measurement: Level
+#       slave: 1
+#       register: 1131
+#     - name: REG_SENSOR_RPM_SAF
+#       unit_of_measurement: RPM
+#       slave: 1
+#       register: 12401
+#     - name: REG_SENSOR_RPM_EAF
+#       unit_of_measurement: RPM
+#       slave: 1
+#       register: 12402
+#     - name: REG_SENSOR_OAT
+#       unit_of_measurement: °C
+#       slave: 1
+#       register: 12102
+#     - name: REG_SENSOR_SAT
+#       unit_of_measurement: °C
+#       slave: 1
+#       register: 12103
+#     - name: REG_SENSOR_PDM_EAT_VALUE
+#       unit_of_measurement: NA
+#       slave: 1
+#       register: 12544
+#     - name: REG_SENSOR_RHS_PDM
+#       unit_of_measurement: NA
+#       slave: 1
+#       register: 12136
 
 
 - platform: template
   sensors:
-    # energy_heatpump:
-    #   friendly_name: "energy heatpump"
-    #   unit_of_measurement: 'kWh'
-    #   value_template: "{{ states('sensor.energy_meter_heatpump')|float }}"
 
-    # power_heatpump:
-    #   friendly_name: "power heatpump"
-    #   unit_of_measurement: 'W'
-    #   value_template: "{{ states('sensor.power_meter_heatpump')|float }}"
-
-    energy_rack:
+    energy_rack_kwh:
       friendly_name: "energy rack"
       unit_of_measurement: "kWh"
       value_template: "{{ states('sensor.power_energy_feedback_rack')|float / 1000 }}"
+      availability_template: "{{ states('sensor.power_energy_feedback_rack') not in ['unknown', 'unavailable'] }}"
 
-    energy_fridge:
+    energy_fridge_kwh:
       friendly_name: "energy fridge"
       unit_of_measurement: "kWh"
       value_template: "{{ states('sensor.power_energy_feedback_fridge')|float / 1000 }}"
+      availability_template: "{{ states('sensor.power_energy_feedback_fridge') not in ['unknown', 'unavailable'] }}"
 
-    energy_dishwasher:
+    energy_dishwasher_kwh:
       friendly_name: "energy dishwasher"
       unit_of_measurement: "kWh"
       value_template: "{{ states('sensor.power_energy_feedback_dishwasher')|float / 1000 }}"
+      availability_template: "{{ states('sensor.power_energy_feedback_dishwasher') not in ['unknown', 'unavailable'] }}"
 
-    energy_combioven_fridgeroom:
+    energy_combioven_fridgeroom_kwh:
       friendly_name: "energy combioven_fridgeroom"
       unit_of_measurement: "kWh"
       value_template: "{{ states('sensor.power_energy_feedback_combioven_fridgeroom')|float / 1000 }}"
+      availability_template: "{{ states('sensor.power_energy_feedback_combioven_fridgeroom') not in ['unknown', 'unavailable'] }}"
 
-    energy_coffe_oven:
+    energy_coffe_oven_kwh:
       friendly_name: "energy coffe_oven"
       unit_of_measurement: "kWh"
       value_template: "{{ states('sensor.power_energy_feedback_coffe_oven')|float / 1000 }}"
+      availability_template: "{{ states('sensor.power_energy_feedback_coffe_oven') not in ['unknown', 'unavailable'] }}"
 
-    energy_washingmachine2:
+    energy_washingmachine2_kwh:
       friendly_name: "energy washingmachine2"
       unit_of_measurement: "kWh"
       value_template: "{{ states('sensor.power_energy_feedback_washingmachine2')|float / 1000 }}"
+      availability_template: "{{ states('sensor.power_energy_feedback_washingmachine2') not in ['unknown', 'unavailable'] }}"
 
-    energy_washingmachine1:
+    energy_washingmachine1_kwh:
       friendly_name: "energy washingmachine1"
       unit_of_measurement: "kWh"
       value_template: "{{ states('sensor.power_energy_feedback_washingmachine1')|float / 1000 }}"
+      availability_template: "{{ states('sensor.power_energy_feedback_washingmachine1') not in ['unknown', 'unavailable'] }}"
 
-    energy_ventilation:
+    energy_ventilation_kwh:
       friendly_name: "energy ventilation"
       unit_of_measurement: "kWh"
       value_template: "{{ states('sensor.power_energy_feedback_ventilation')|float / 1000 }}"
+      availability_template: "{{ states('sensor.power_energy_feedback_ventilation') not in ['unknown', 'unavailable'] }}"
 
-    current_rack:
-      friendly_name: "current rack"
-      unit_of_measurement: "A"
-      value_template: "{{ states('sensor.power_current_feedback_rack')|float / 1000 }}"
+    # current_rack_kwh:
+    #   friendly_name: "current rack"
+    #   unit_of_measurement: "A"
+    #   value_template: "{{ states('sensor.power_current_feedback_rack')|float / 1000 }}"
+    #   availability_template: "{{ states('sensor.power_current_feedback_rack') not in ['unknown', 'unavailable'] }}"
 
-    current_fridge:
-      friendly_name: "current fridge"
-      unit_of_measurement: "A"
-      value_template: "{{ states('sensor.power_current_feedback_fridge')|float / 1000 }}"
+    # current_fridge_A:
+    #   friendly_name: "current fridge"
+    #   unit_of_measurement: "A"
+    #   value_template: "{{ states('sensor.power_current_feedback_fridge')|float / 1000 }}"
 
-    current_dishwasher:
-      friendly_name: "current dishwasher"
-      unit_of_measurement: "A"
-      value_template: "{{ states('sensor.power_current_feedback_dishwasher')|float / 1000 }}"
+    # current_dishwasher_A:
+    #   friendly_name: "current dishwasher"
+    #   unit_of_measurement: "A"
+    #   value_template: "{{ states('sensor.power_current_feedback_dishwasher')|float / 1000 }}"
 
-    current_combioven_fridgeroom:
-      friendly_name: "current combioven_fridgeroom"
-      unit_of_measurement: "A"
-      value_template: "{{ states('sensor.power_current_feedback_combioven_fridgeroom')|float / 1000 }}"
+    # current_combioven_fridgeroom_A:
+    #   friendly_name: "current combioven_fridgeroom"
+    #   unit_of_measurement: "A"
+    #   value_template: "{{ states('sensor.power_current_feedback_combioven_fridgeroom')|float / 1000 }}"
 
-    current_coffe_oven:
-      friendly_name: "current coffe_oven"
-      unit_of_measurement: "A"
-      value_template: "{{ states('sensor.power_current_feedback_coffe_oven')|float / 1000 }}"
+    # current_coffe_oven_A:
+    #   friendly_name: "current coffe_oven"
+    #   unit_of_measurement: "A"
+    #   value_template: "{{ states('sensor.power_current_feedback_coffe_oven')|float / 1000 }}"
 
-    current_washingmachine1:
-      friendly_name: "current washingmachine1"
-      unit_of_measurement: "A"
-      value_template: "{{ states('sensor.power_current_feedback_washingmachine1')|float / 1000 }}"
+    # current_washingmachine1_A:
+    #   friendly_name: "current washingmachine1"
+    #   unit_of_measurement: "A"
+    #   value_template: "{{ states('sensor.power_current_feedback_washingmachine1')|float / 1000 }}"
 
-    current_washingmachine2:
-      friendly_name: "current washingmachine2"
-      unit_of_measurement: "A"
-      value_template: "{{ states('sensor.power_current_feedback_washingmachine2')|float / 1000 }}"
+    # current_washingmachine2_A:
+    #   friendly_name: "current washingmachine2"
+    #   unit_of_measurement: "A"
+    #   value_template: "{{ states('sensor.power_current_feedback_washingmachine2')|float / 1000 }}"
 
-    current_ventilation:
-      friendly_name: "current ventilation"
-      unit_of_measurement: "A"
-      value_template: "{{ states('sensor.power_current_ventilation')|float / 1000 }}"
+    # current_ventilation_A:
+    #   friendly_name: "current ventilation"
+    #   unit_of_measurement: "A"
+    #   value_template: "{{ states('sensor.power_current_ventilation')|float / 1000 }}"
 
     # heating_valve_error_shed:
     #   friendly_name: 'heating_valve_error_shed'

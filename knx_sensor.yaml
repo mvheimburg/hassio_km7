@@ -1,42 +1,55 @@
 - name: heating.valve.setpkt.shed
   state_address: '1/3/10'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.coridor
   state_address: '1/3/100'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.bathroom_d
   state_address: '1/3/110'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.washing_room
   state_address: '1/3/120'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.wardrobe
   state_address: '1/3/130'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.play_1
   state_address: '1/3/180'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.play_2
-  state_address: '1/3/180'
+  state_address: '1/3/181'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.kitchen
   state_address: '1/3/200'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.living_1
   state_address: '1/3/210'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.living_2
   state_address: '1/3/211'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.stairway
   state_address: '1/3/212'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.office
   state_address: '1/3/220'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.bathroom_u
   state_address: '1/3/230'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.setpkt.bedroom_u
   state_address: '1/3/240'
   type: 'percent'
@@ -45,95 +58,117 @@
 - name: heating.valve.feedback.shed
   state_address: '1/4/10'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.coridor
   state_address: '1/4/100'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.bathroom_d
   state_address: '1/4/110'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.washing_room
   state_address: '1/4/120'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.wardrobe
   state_address: '1/4/130'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.play_1
   state_address: '1/4/180'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.play_2
-  state_address: '1/4/180'
+  state_address: '1/4/181'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.kitchen
   state_address: '1/4/200'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.living_1
   state_address: '1/4/210'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.living_2
   state_address: '1/4/211'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.stairway
   state_address: '1/4/212'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.office
   state_address: '1/4/220'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.bathroom_u
   state_address: '1/4/230'
   type: 'percent'
+  state_class: 'measurement'
 - name: heating.valve.feedback.bedroom_u
   state_address: '1/4/240'
   type: 'percent'
+  state_class: 'measurement'
 
 
 
 ### POWER ###
-- name: power.current.feedback.rack
-  state_address: '3/2/0'
-  type: 'DPT-7'
-- name: power.current.feedback.dishwasher
-  state_address: '3/2/1'
-  type: 'DPT-7'
-- name: power.current.feedback.fridge
-  state_address: '3/2/2'
-  type: 'DPT-7'
-- name: power.current.feedback.combioven_fridgeroom
-  state_address: '3/2/3'
-  type: 'DPT-7'
-- name: power.current.feedback.coffe_oven
-  state_address: '3/2/4'
-  type: 'DPT-7'
-- name: power.current.feedback.washingmachine1
-  state_address: '3/2/5'
-  type: 'DPT-7'
-- name: power.current.feedback.washingmachine2
-  state_address: '3/2/6'
-  type: 'DPT-7'
-- name: power.current.feedback.ventilation
-  state_address: '3/2/7'
-  type: 'DPT-7'
+# - name: power.current.feedback.rack
+#   state_address: '3/2/0'
+#   type: 'DPT-7'
+# - name: power.current.feedback.dishwasher
+#   state_address: '3/2/1'
+#   type: 'DPT-7'
+# - name: power.current.feedback.fridge
+#   state_address: '3/2/2'
+#   type: 'DPT-7'
+# - name: power.current.feedback.combioven_fridgeroom
+#   state_address: '3/2/3'
+#   type: 'DPT-7'
+# - name: power.current.feedback.coffe_oven
+#   state_address: '3/2/4'
+#   type: 'DPT-7'
+# - name: power.current.feedback.washingmachine1
+#   state_address: '3/2/5'
+#   type: 'DPT-7'
+# - name: power.current.feedback.washingmachine2
+#   state_address: '3/2/6'
+#   type: 'DPT-7'
+# - name: power.current.feedback.ventilation
+#   state_address: '3/2/7'
+#   type: 'DPT-7'
 
 - name: power.energy.feedback.rack
   state_address: '3/3/0'
-  type: 'DPT-12'
+  type: 'active_energy'
+  state_class: 'total_increasing'
 - name: power.energy.feedback.dishwasher
   state_address: '3/3/1'
-  type: 'DPT-12'
+  type: 'active_energy'
+  state_class: 'total_increasing'
 - name: power.energy.feedback.fridge
   state_address: '3/3/2'
-  type: 'DPT-12'
+  type: 'active_energy'
+  state_class: 'total_increasing'
 - name: power.energy.feedback.combioven_fridgeroom
   state_address: '3/3/3'
-  type: 'DPT-12'
+  type: 'active_energy'
+  state_class: 'total_increasing'
 - name: power.energy.feedback.coffe_oven
   state_address: '3/3/4'
-  type: 'DPT-12'
+  type: 'active_energy'
+  state_class: 'total_increasing'
 - name: power.energy.feedback.washingmachine1
   state_address: '3/3/5'
-  type: 'DPT-12'
+  type: 'active_energy'
+  state_class: 'total_increasing'
 - name: power.energy.feedback.washingmachine2
   state_address: '3/3/6'
-  type: 'DPT-12'
+  type: 'active_energy'
+  state_class: 'total_increasing'
 - name: power.energy.feedback.ventilation
   state_address: '3/3/7'
-  type: 'DPT-12'
+  type: 'active_energy'
+  state_class: 'total_increasing'

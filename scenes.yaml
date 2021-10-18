@@ -1,3 +1,9 @@
 - id: '1601627604451'
-  name: House locked
-  entities: {}
+  name: House shut down
+  entities:
+    light.all_lights:
+      state: 'off'
+    automation.lock_main_door:
+      state: 'on'
+    cover.garage_gate:
+      state: 'close_cover'

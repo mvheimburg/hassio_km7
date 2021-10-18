@@ -1,38 +1,248 @@
 title: Energy
 icon: mdi:flash
-cards:
+cards: 
   - type: vertical-stack
     cards:
-    
-    - type: custom:mini-graph-card
-      entities:
-        - sensor.real_time_consumption_kjonstad_7
-      hours_to_show: 24
-      points_per_hour: 60
-      show:
-        icon: false
-
-    - type: custom:mini-graph-card
-      entities:
-        - sensor.power_heatpump
-      hours_to_show: 24
-      points_per_hour: 60
-      show:
-        icon: false
-
-    - type: custom:mini-graph-card
-      entities:
-        - sensor.current_rack
-      show:
-        icon: false
-      hours_to_show: 24
-      points_per_hour: 60
-
-    - type: vertical-stack
-      cards:
       - type: entities
-        name: Kaffe
+        title: Stromforbruk daglig
         entities:
+        - type: custom:mini-graph-card
+          name: Varmepumpe
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_heatpump_daily
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Rack
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_rack_daily
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Kaffe og ovn
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_coffe_oven_daily
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Kjolerom og kombiovn
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_combioven_fridgeroom_daily
+          hours_to_show: 24
+          points_per_hour: 60
+      
+        - type: custom:mini-graph-card
+          name: Oppvaskmaskin
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_dishwasher_daily
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Kjøleskap
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_fridge_daily
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Vaskemaskin 1
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_washingmachine1_daily
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Vaskemaskin 2
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_washingmachine2_daily
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Ventilasjon
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_ventilation_daily
+          hours_to_show: 24
+          points_per_hour: 60
+
+
+
+
+
+
+
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: Stromforbruk månedlig
+        entities:
+        - type: custom:mini-graph-card
+          name: Varmepumpe
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_heatpump_monthly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Rack
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_rack_monthly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Kaffe og ovn
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_coffe_oven_monthly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Kjolerom og kombiovn
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_combioven_fridgeroom_monthly
+          hours_to_show: 24
+          points_per_hour: 60
+      
+        - type: custom:mini-graph-card
+          name: Oppvaskmaskin
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_dishwasher_monthly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Kjoleskap
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_fridge_monthly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Vaskemaskin 1
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_washingmachine1_monthly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Vaskemaskin 2
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_washingmachine2_monthly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Ventilasjon
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_ventilation_monthly
+          hours_to_show: 24
+          points_per_hour: 60
+          
+
+
+
+
+
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: Stromforbruk årlig
+        entities:
+        - type: custom:mini-graph-card
+          name: Varmepumpe
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_heatpump_yearly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Rack
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_rack_yearly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Kaffe og ovn
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_coffe_oven_yearly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Kjolerom og kombiovn
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_combioven_fridgeroom_yearly
+          hours_to_show: 24
+          points_per_hour: 60
+      
+        - type: custom:mini-graph-card
+          name: Oppvaskmaskin
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_dishwasher_yearly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Kjoleskap
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_fridge_yearly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Vaskemaskin 1
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_washingmachine1_yearly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Vaskemaskin 2
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_washingmachine2_yearly
+          hours_to_show: 24
+          points_per_hour: 60
+
+        - type: custom:mini-graph-card
+          name: Ventilasjon
+          entities:
+            # - entity: sensor.real_time_consumption_kjonstad_7
+            - sensor.energy_ventilation_yearly
+          hours_to_show: 24
+          points_per_hour: 60
+          
 
 visible:
   - user: !secret user_id_martin 

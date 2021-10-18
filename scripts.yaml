@@ -3,17 +3,26 @@ ring_bell_day:
   mode: single
   sequence:
   - data:
-      message: Noen ringer på
-    service: notify.mobile_app_mob_martin
-  - data:
       volume_level: 0.8
-    entity_id: media_player.huset
     service: media_player.volume_set
+    target:
+      device_id:
+      - d4963bf8143011eb9251c9a5043f99b5
+      - d49937dc143011ebb2f20573a3d5520e
+      - d4906344143011ebac7ac10e12109ffa
   - data:
       media_content_id: https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3
       media_content_type: music
-    entity_id: media_player.huset
     service: media_player.play_media
+    target:
+      device_id:
+      - d4963bf8143011eb9251c9a5043f99b5
+      - d49937dc143011ebb2f20573a3d5520e
+      - d4906344143011ebac7ac10e12109ffa
+  - service: notify.mobile_app_martin_mob
+    data:
+      message: Noen på døren
+      title: DingDong
 matilde_alarm:
   alias: matilde_alarm
   sequence:
@@ -30,4 +39,93 @@ matilde_alarm:
     data:
       entity_id: input_select.matilde_alarm_select
       option: Av
+  mode: single
+ring_bell_night:
+  alias: ring_bell_night
+  sequence:
+  - data:
+      volume_level: 0.55
+    service: media_player.volume_set
+    target:
+      device_id:
+      - d4963bf8143011eb9251c9a5043f99b5
+      - d49937dc143011ebb2f20573a3d5520e
+      - d4906344143011ebac7ac10e12109ffa
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.halloween_mode
+        state: 'on'
+      sequence:
+      - service: media_player.play_media
+        target:
+          entity_id:
+          - media_player.kjokken
+          - media_player.kontor
+          - media_player.bad_oppe
+        data:
+          media_content_id: media-source://media_source/local/scarecrow.mp3
+          media_content_type: music
+    default:
+    - service: media_player.play_media
+      target:
+        entity_id:
+        - media_player.bad_oppe
+        - media_player.kjokken
+        - media_player.kontor
+      data:
+        media_content_id: https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3
+        media_content_type: music
+  - service: notify.mobile_app_martin_mob
+    data:
+      message: Noen på døren
+      title: DingDong
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_boolean.halloween_mode
+        state: 'on'
+      sequence:
+      - service: light.turn_off
+        target:
+          entity_id: light.outdoor_main_door
+        data: {}
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 10
+          milliseconds: 0
+      - service: light.turn_on
+        target:
+          entity_id: light.outdoor_main_door
+        data:
+          brightness_pct: 40
+          flash: short
+      - delay:
+          hours: 0
+          minutes: 3
+          seconds: 0
+          milliseconds: 0
+      - service: light.turn_on
+        target:
+          entity_id: light.outdoor_main_door
+        data:
+          brightness_pct: 30
+    default:
+    - service: light.turn_on
+      target:
+        entity_id: light.outdoor_main_door
+      data:
+        transition: 2
+        brightness_pct: 70
+    - delay:
+        hours: 0
+        minutes: 10
+        seconds: 0
+        milliseconds: 0
+    - service: light.turn_on
+      target:
+        entity_id: light.outdoor_main_door
+      data:
+        brightness_pct: 30
   mode: single

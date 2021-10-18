@@ -1,3 +1,14 @@
 
+
 - name: door_lock.main
   state_address: '4/0/0'
+
+- name: heating.dewpoint_alarm
+  state_address: '2/2/0'
+
+### WATER SENSORS
+- name: water.kitchen_bench
+  state_address: '7/0/0'
+
+- name: water.kitchen_fridge
+  state_address: '7/0/1'

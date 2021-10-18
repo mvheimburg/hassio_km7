@@ -3,20 +3,33 @@ icon: mdi:home-lock
 cards:
   - type: vertical-stack
     cards:
-    - type: entities
-      title: Lasogsla
-      show_header_toggle: false
-      entities:
-        - entity: lock.main_door
-          icon: mdi:home-lock
-          name: Front dor
-          toggle: true
-    - type: entities
-      title: Garasje
-      show_header_toggle: false
-      entities:
-        - entity: cover.garage_gate
-          icon: mdi:home-lock
-          name: Garasjeport
-
-        
+      - type: entities
+        title: Lasogsla
+        show_header_toggle: false
+        entities:
+          - entity: lock.main_door
+            icon: mdi:home-lock
+            name: Front dor
+            toggle: true
+          - entity: lock.garage_door
+            icon: mdi:home-lock
+            name: Garasje dor
+            toggle: true
+          - entity: lock.shed_door
+            icon: mdi:home-lock
+            name: Bod dor
+            toggle: true
+      - type: entities
+        title: Garasje
+        show_header_toggle: false
+        entities:
+          - entity: cover.garage_gate
+            icon: mdi:home-lock
+            name: Garasjeport
+      - type: entities
+        title: Dørstatus
+        show_header_toggle: false
+        entities:
+          - entity: binary_sensor.main_door_closed
+            icon: mdi:door-closed
+            name: Hoved dør

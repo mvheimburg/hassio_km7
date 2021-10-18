@@ -2,6 +2,7 @@
   temperature_address: '1/1/10'
   target_temperature_address: '1/0/10'
   target_temperature_state_address: '1/0/10'
+  heat_cool_state_address: '2/1/10'
   min_temp: 12.0
   max_temp: 18.0
 
@@ -9,6 +10,7 @@
   temperature_address: '1/1/100'
   target_temperature_address: '1/0/100'
   target_temperature_state_address: '1/0/100'
+  heat_cool_state_address: '2/1/100'
   min_temp: 18.0
   max_temp: 28.0
 
@@ -16,6 +18,7 @@
   temperature_address: '1/1/110'
   target_temperature_address: '1/0/110'
   target_temperature_state_address: '1/0/110'
+  heat_cool_state_address: '2/1/110'
   min_temp: 18.0
   max_temp: 28.0
 
@@ -23,6 +26,7 @@
   temperature_address: '1/1/120'
   target_temperature_address: '1/0/120'
   target_temperature_state_address: '1/0/120'
+  heat_cool_state_address: '2/1/120'
   min_temp: 18.0
   max_temp: 28.0
 
@@ -30,6 +34,7 @@
   temperature_address: '1/1/130'
   target_temperature_address: '1/0/120'
   target_temperature_state_address: '1/0/120'
+  heat_cool_state_address: '2/1/120'
   min_temp: 18.0
   max_temp: 28.0
 
@@ -37,6 +42,7 @@
   temperature_address: '1/1/150'
   target_temperature_address: '1/0/150'
   target_temperature_state_address: '1/0/150'
+  heat_cool_state_address: '2/1/150'
   min_temp: 18.0
   max_temp: 28.0
 
@@ -44,6 +50,7 @@
   temperature_address: '1/1/160'
   target_temperature_address: '1/0/160'
   target_temperature_state_address: '1/0/160'
+  heat_cool_state_address: '2/1/160'
   min_temp: 18.0
   max_temp: 28.0
 
@@ -51,6 +58,7 @@
   temperature_address: '1/1/170'
   target_temperature_address: '1/0/170'
   target_temperature_state_address: '1/0/170'
+  heat_cool_state_address: '2/1/170'
   min_temp: 18.0
   max_temp: 28.0
 
@@ -58,6 +66,7 @@
   temperature_address: '1/1/180'
   target_temperature_address: '1/0/180'
   target_temperature_state_address: '1/0/180'
+  heat_cool_state_address: '2/1/180'
   min_temp: 18.0
   max_temp: 28.0
 
@@ -65,6 +74,7 @@
   temperature_address: '1/1/200'
   target_temperature_address: '1/0/200'
   target_temperature_state_address: '1/0/200'
+  heat_cool_state_address: '2/1/200'
   min_temp: 18.0
   max_temp: 28.0
 
@@ -72,6 +82,7 @@
   temperature_address: '1/1/230'
   target_temperature_address: '1/0/230'
   target_temperature_state_address: '1/0/230'
+  heat_cool_state_address: '2/1/230'
   min_temp: 18.0
   max_temp: 28.0
 
@@ -79,5 +90,10 @@
   temperature_address: '1/1/240'
   target_temperature_address: '1/0/240'
   target_temperature_state_address: '1/0/240'
+  heat_cool_state_address: '2/1/240'
   min_temp: 18.0
   max_temp: 28.0
+
+# - name: cooling_toggle
+#   heat_cool_address: '2/0/0'
+#   heat_cool_state_address: '2/1/0'

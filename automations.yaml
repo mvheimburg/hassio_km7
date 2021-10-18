@@ -9,32 +9,6 @@
   - data:
       name: palms
     service: frontend.set_theme
-- id: '1595059870707'
-  alias: Lock main door
-  description: ''
-  trigger:
-  - entity_id: binary_sensor.door_lock_main
-    from: 'on'
-    platform: state
-    to: 'off'
-  condition: []
-  action:
-  - data: {}
-    entity_id: lock.mqtt_lock
-    service: lock.lock
-- id: '1595059955329'
-  alias: Unlock main door
-  description: ''
-  trigger:
-  - entity_id: binary_sensor.door_lock_main
-    from: 'off'
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data: {}
-    entity_id: lock.mqtt_lock
-    service: lock.unlock
 - id: '1598510256757'
   alias: Morning
   description: ''
@@ -52,20 +26,28 @@
   alias: Ring bell day
   description: ''
   trigger:
-  - payload: do
-    platform: mqtt
+  - platform: mqtt
     topic: bell/ring/toggle
+    payload: do
   condition:
-  - after: 06:00
-    before: '19:00'
+  - after: 06:00:00
+    before: '19:00:00'
     condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    - sun
   action:
   - data: {}
     entity_id: script.ring_bell_day
     service: script.toggle
   mode: single
 - id: '1603913785136'
-  alias: Candela light main door
+  alias: Halloween on
   description: ''
   trigger:
   - platform: state
@@ -74,18 +56,10 @@
     to: 'on'
   condition: []
   action:
-  - repeat:
-      until:
-      - condition: state
-        entity_id: input_boolean.halloween_mode
-        state: 'off'
-      sequence:
-      - service: light.turn_on
-        data:
-          brightness: '{{ (range(40, 100)|random) }}'
-          transition: 1
-        entity_id: light.outdoor_main_door
-      - delay: milliseconds {{ (range(400, 2000)|random) }}
+  - service: mqtt.publish
+    data:
+      topic: bell/mode/cmd
+      payload: halloween
   mode: single
 - id: '1603916033454'
   alias: Door just opened
@@ -116,9 +90,10 @@
   action:
   - service: light.turn_on
     data:
-      brightness: 10
+      brightness: 30
       transition: 10
-    entity_id: light.outdoor_main_door
+    target:
+      entity_id: light.outdoor_main_door
   - service: light.turn_on
     data: {}
     entity_id: light.outdoor_nude
@@ -184,45 +159,19 @@
       transition: 1
   mode: single
 - id: '1604159418109'
-  alias: Candela light main door (Duplicate)
+  alias: Halloween off
   description: ''
   trigger:
   - platform: state
     entity_id: input_boolean.halloween_mode
-    from: 'off'
-    to: 'on'
+    from: 'on'
+    to: 'off'
   condition: []
   action:
-  - repeat:
-      until:
-      - condition: state
-        entity_id: input_boolean.halloween_mode
-        state: 'off'
-      sequence:
-      - choose:
-        - conditions:
-          - condition: state
-            entity_id: input_boolean.door_just_opened
-            state: 'on'
-          sequence:
-          - service: light.turn_on
-            data:
-              brightness: 100
-              transition: 0
-            entity_id: light.outdoor_main_door
-          - delay: 'milliseconds: 300'
-          - service: light.turn_off
-            data:
-              transition: 0
-            entity_id: light.outdoor_main_door
-          - delay: 'milliseconds: 300'
-        default:
-        - service: light.turn_on
-          data:
-            brightness: '{{ (range(0, 80)|random) }}'
-            transition: 1
-          entity_id: light.outdoor_main_door
-        - delay: milliseconds {{ (range(300, 2000)|random) }}
+  - service: mqtt.publish
+    data:
+      topic: bell/mode/cmd
+      payload: normal
   mode: single
 - id: '1604919943124'
   alias: Matilde Alarm
@@ -256,24 +205,6 @@
     data: {}
     entity_id: script.matilde_alarm
   mode: single
-- id: '1608041910083'
-  alias: Set manual ventilation value
-  description: ''
-  trigger:
-  - platform: state
-    entity_id: input_select.ventilation_fan_level
-  condition: []
-  action:
-  - service: modbus.write_register
-    data_template:
-      unit: 1
-      address: 1131
-      value: "{% if is_state('input_select.ventilation_fan_level', 'off') %}\n  1\n\
-        {%-elif is_state('input_select.ventilation_fan_level', 'low') %}\n  2\n{%-elif\
-        \ is_state('input_select.ventilation_fan_level', 'normal') %}\n  3\n{%-elif\
-        \ is_state('input_select.ventilation_fan_level', 'high') %}\n  4\n{% endif\
-        \ %}\n"
-  mode: single
 - id: '1609766359131'
   alias: Garage open notofocation
   description: ''
@@ -284,7 +215,128 @@
     for: 00:10:00
   condition: []
   action:
-  - service: notify.mobile_app_sm_g986b
-    data:
-      message: Garage open for 10 minutes
+  - service: notify.mobile_app_martin_mob
+  mode: single
+- id: '1614154375154'
+  alias: Growth light timer
+  description: ''
+  trigger:
+  - platform: time
+    at: input_datetime.flower_growth_lights_washingroom_start_time
+  condition: []
+  action:
+  - service: light.turn_on
+    data: {}
+    entity_id: light.washing_room_growth
+  - wait_for_trigger:
+    - platform: time
+      at: input_datetime.flower_growth_lights_washingroom_end_time
+  - service: light.turn_off
+    data: {}
+    entity_id: light.washing_room_growth
+  mode: single
+- id: '1622493340610'
+  alias: Ring bell night
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: bell/ring/toggle
+    payload: do
+  condition:
+  - after: '19:00:00'
+    before: 00:00:00
+    condition: time
+  action:
+  - data: {}
+    service: script.toggle
+    target:
+      entity_id: script.ring_bell_night
+  mode: single
+- id: '1622876089975'
+  alias: Door lock main unlock - knx
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.door_lock_main
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: lock.lock
+    target:
+      entity_id: lock.main_door
+  mode: single
+- id: '1622876128430'
+  alias: Door lock main lock - knx
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.door_lock_main
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: lock.unlock
+    target:
+      entity_id: lock.main_door
+  mode: single
+- id: '1625170397687'
+  alias: Climate heating on
+  description: cooling/heating pump and valves based on knx controller cooling status
+  trigger:
+  - platform: state
+    entity_id: switch.heating_toggle_cooling
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id:
+      - switch.heating_cooling_valves
+      - switch.heating_cooling_pump
+  mode: single
+- id: '1625170463811'
+  alias: Climate cooling on
+  description: cooling/heating pump and valves based on knx controller cooling status
+  trigger:
+  - platform: state
+    entity_id: switch.heating_toggle_cooling
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id:
+      - switch.heating_cooling_pump
+      - switch.heating_cooling_valves
+  mode: single
+- id: '1625428976440'
+  alias: Close garage
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:00'
+  - platform: time
+    at: '22:00'
+  - platform: time
+    at: '23:00'
+  - platform: time
+    at: 00:00
+  - platform: time
+    at: 01:00
+  - platform: time
+    at: 02:00
+  - platform: time
+    at: 03:00
+  - platform: time
+    at: 04:00
+  - platform: time
+    at: 05:00
+  condition: []
+  action:
+  - service: cover.close_cover
+    target:
+      entity_id: cover.garage_gate
   mode: single

@@ -92,6 +92,9 @@ cards:
           icon: mdi:vanity-light
           name: Sov Matilde
           toggle: true
+
+  - type: vertical-stack
+    cards:
     - type: entities
       title: Nede
       show_header_toggle: false
@@ -140,6 +143,9 @@ cards:
           icon: mdi:led-strip-variant
           name: Herjerom
           toggle: true
+  
+  - type: vertical-stack
+    cards:
     - type: entities
       title: Utendors
       show_header_toggle: false

@@ -26,6 +26,12 @@
   brightness_address: '0/3/120'
   brightness_state_address: '0/4/120'
 
+- name: washing_room_growth
+  address: '0/0/121'
+  state_address: '0/1/121'
+  brightness_address: '0/3/121'
+  brightness_state_address: '0/4/121'
+
 - name: wardrobe
   address: '0/0/130'
   state_address: '0/1/130'
