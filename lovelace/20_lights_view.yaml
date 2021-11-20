@@ -69,6 +69,11 @@ cards:
           icon: mdi:home-lightbulb-outline
           name: Vegg i gang
           toggle: true
+        - entity: light.office_roof
+          type: custom:slider-entity-row
+          icon: mdi:spotlight
+          name: Kontor tak
+          toggle: true
         - entity: light.bathroom_u_roof
           type: custom:slider-entity-row
           icon: mdi:spotlight

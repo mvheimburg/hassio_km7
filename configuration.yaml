@@ -6,6 +6,8 @@ homeassistant:
   time_zone: Europe/Oslo
   media_dirs:
     local: /media
+  external_url: !secret http_base_url
+  internal_url: "http://192.168.1.2:8123"
 # Text to speech
 tts:
   - platform: google_translate
@@ -23,6 +25,8 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - !secret my_proxy
+  cors_allowed_origins:
+    - https://api.home-connect.com
 
 # influxdb: !include influxdb.yaml
 
@@ -74,6 +78,10 @@ home_connect:
   client_id: !secret homeconnect_client_id
   client_secret: !secret homeconnect_client_secret
 
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
+
 sensor: !include sensors.yaml
 
 # binary_sensor: !include binary_sensors.yaml
@@ -100,3 +108,5 @@ panel_iframe:
     title: "Lockmaster"
     url: "https://doorcontrol.lvh.duckdns.org"
 
+
+template: !include templates.yaml

@@ -1,0 +1,17 @@
+
+- sensor: 
+    name: energy_total_kwh
+    unit_of_measurement: kWh
+    device_class: energy
+    state_class: total_increasing
+    state: >
+      {{ states('sensor.energy_heatpump_kwh')|float             
+      + states('sensor.power_energy_feedback_rack')|float / 1000 
+      + states('sensor.power_energy_feedback_fridge')|float / 1000 
+      + states('sensor.power_energy_feedback_dishwasher')|float / 1000 
+      + states('sensor.power_energy_combioven_fridgeroom_kwh')|float / 1000 
+      + states('sensor.power_energy_coffe_oven_kwh')|float / 1000 
+      + states('sensor.power_energy_washingmachine2_kwh')|float / 1000 
+      + states('sensor.power_energy_washingmachine1_kwh')|float / 1000 
+      + states('sensor.power_energy_ventilation_kwh')|float / 1000 
+      }}

@@ -22,30 +22,6 @@
     entity_id: switch.kaffemaskin_power
     type: turn_on
   mode: single
-- id: '1600064405166'
-  alias: Ring bell day
-  description: ''
-  trigger:
-  - platform: mqtt
-    topic: bell/ring/toggle
-    payload: do
-  condition:
-  - after: 06:00:00
-    before: '19:00:00'
-    condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
-    - sat
-    - sun
-  action:
-  - data: {}
-    entity_id: script.ring_bell_day
-    service: script.toggle
-  mode: single
 - id: '1603913785136'
   alias: Halloween on
   description: ''
@@ -90,8 +66,8 @@
   action:
   - service: light.turn_on
     data:
-      brightness: 30
       transition: 10
+      brightness_pct: 30
     target:
       entity_id: light.outdoor_main_door
   - service: light.turn_on
@@ -213,9 +189,13 @@
     entity_id: cover.garage_gate
     to: open
     for: 00:10:00
+    from: '*'
   condition: []
   action:
   - service: notify.mobile_app_martin_mob
+    data:
+      message: Åpen i 10 minutter
+      title: Garasje
   mode: single
 - id: '1614154375154'
   alias: Growth light timer
@@ -236,21 +216,29 @@
     entity_id: light.washing_room_growth
   mode: single
 - id: '1622493340610'
-  alias: Ring bell night
+  alias: Ring bell
   description: ''
   trigger:
   - platform: mqtt
     topic: bell/ring/toggle
     payload: do
-  condition:
-  - after: '19:00:00'
-    before: 00:00:00
-    condition: time
+  condition: []
   action:
-  - data: {}
-    service: script.toggle
-    target:
-      entity_id: script.ring_bell_night
+  - choose:
+    - conditions:
+      - condition: time
+        after: '19:00'
+        before: 07:00
+      sequence:
+      - service: script.toggle
+        target:
+          entity_id: script.ring_bell_night
+        data: {}
+    default:
+    - service: script.toggle
+      target:
+        entity_id: script.ring_bell_day
+      data: {}
   mode: single
 - id: '1622876089975'
   alias: Door lock main unlock - knx
@@ -339,4 +327,59 @@
   - service: cover.close_cover
     target:
       entity_id: cover.garage_gate
+  mode: single
+- id: '1634837128615'
+  alias: Main door opened
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.main_door_closed
+    to: 'on'
+    from: 'off'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: light.outdoor_main_door
+        state: 'on'
+      sequence:
+      - service: light.turn_on
+        target:
+          entity_id: light.outdoor_main_door
+        data:
+          brightness_step_pct: 30
+      - wait_for_trigger:
+        - platform: state
+          entity_id: binary_sensor.main_door_closed
+          from: open
+          to: closed
+          for:
+            hours: 0
+            minutes: 10
+            seconds: 0
+            milliseconds: 0
+      - service: light.turn_on
+        target:
+          entity_id: light.outdoor_main_door
+        data:
+          brightness_step_pct: -30
+    default: []
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: light.coridor
+        state: 'off'
+      - condition: and
+        conditions:
+        - condition: time
+          after: 06:00
+          before: '19:00'
+      sequence:
+      - service: light.turn_on
+        target:
+          entity_id: light.coridor
+        data:
+          brightness_pct: 100
+    default: []
   mode: single

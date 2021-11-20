@@ -126,6 +126,12 @@
   address: '0/0/213'
   state_address: '0/1/213'
 
+- name: office.roof
+  address: '0/0/220'
+  state_address: '0/1/220'
+  brightness_address: '0/3/220'
+  brightness_state_address: '0/4/220'
+
 - name: bathroom_u.roof
   address: '0/0/230'
   state_address: '0/1/230'
