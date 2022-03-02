@@ -23,6 +23,7 @@ light:
       - light.living_room_tv   
       - light.hallway_stairs   
       - light.hallway_wall     
+      - light.office_roof  
       - light.bathroom_u_mirror  
       - light.bathroom_u_roof  
       - light.bathroom_u_pend  
@@ -41,3 +42,21 @@ light:
        - light.downstairs_lights
        - light.upstairs_lights
        - light.outdoor_lights
+
+  - platform: group
+    name: 'Bathroom U lights'
+    entities:
+      - light.bathroom_u_mirror  
+      - light.bathroom_u_roof  
+      - light.bathroom_u_pend 
+
+  - platform: group
+    name: 'Living area lights'
+    entities:
+      - light.kitchen_roof     
+      - light.kitchen_island   
+      - light.kitchen_manhattan
+      - light.kitchen_dining   
+      - light.living_room_tv   
+      - light.hallway_stairs   
+      - light.hallway_wall     

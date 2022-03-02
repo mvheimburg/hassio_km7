@@ -1,5 +1,5 @@
-tunneling:
-  host: !secret knx_gateway_ip
+# tunneling:
+#   host: !secret knx_gateway_ip
   # port: !secret knx_gateway_port
   # local_ip: !secret homassistant_ip
   # expose: !include knx_expose.yaml

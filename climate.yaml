@@ -85,3 +85,28 @@
 #   target_temperature_state_address: '1/0/240'
 #   min_temp: 18.0
 #   max_temp: 28.0
+
+- platform: climate_template
+  name: House Climate
+  modes:
+    - "cool"
+    - "heat"
+  fan_modes:
+    - "on"
+    - "off" 
+  # Example Action.
+  icon_template: >
+    {% if is_state('switch.heating_toggle_cooling', 'on') %}
+      mdi:snowflake
+    {% else %}
+      mdi:fire
+    {% endif %}
+
+  set_hvac_mode:
+    # allows me to disable sending commands to aircon via UI.
+    - condition: state  
+      entity_id: switch.heating_toggle_cooling
+      state: "on"
+
+- platform: systemair
+  slave: 1

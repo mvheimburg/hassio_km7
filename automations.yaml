@@ -1,5 +1,5 @@
 - id: '1581329605337'
-  alias: '[System] Hass Started'
+  alias: Set theme at start
   description: ''
   trigger:
   - event: start
@@ -382,4 +382,18 @@
         data:
           brightness_pct: 100
     default: []
+  mode: single
+- id: '1643977604539'
+  alias: urn On Living Room TV with WakeOnLan
+  description: Turn On Living Room TV with WakeOnLan
+  trigger:
+  - platform: device
+    device_id: 7df70d0f9a325efa7425998e739d48e5
+    domain: webostv
+    type: webostv.turn_on
+  condition: []
+  action:
+  - service: wake_on_lan.send_magic_packet
+    data:
+      mac: 64:95:6c:14:0c:4c
   mode: single

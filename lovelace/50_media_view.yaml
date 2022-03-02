@@ -1,13 +1,18 @@
 title: Media
 icon: mdi:information-outline
 cards:
-  - type: custom:layout-card
-    layout: vertical
-    cards:
-      - type: horizontal-stack
-        cards:
-        - type: media-control
-          entity: media_player.kjokken
+  - type: 'custom:lg-remote-control'
+    entity: media_player.living_room
+    sources:
+      - name: Netflix
+        icon: 'mdi:netflix'
+      - name: Disney+
+        icon: disney
+      - name: YouTube
+        icon: 'mdi:youtube-tv'
+      - name: HDMI 2
+        icon: 'mdi:video-input-hdmi'
+
 
 visible:
   - user: !secret user_id_martin 

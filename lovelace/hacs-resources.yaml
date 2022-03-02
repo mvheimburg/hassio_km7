@@ -16,3 +16,22 @@
 
 - url: /hacsfiles/scheduler-card/scheduler-card.js
   type: module
+
+- url: /hacsfiles/LG-WebOS-Remote-Control/lg-remote-control.js
+  type: module
+
+- url: /hacsfiles/mini-climate-card/mini-climate-card-bundle.js
+  type: module
+
+- url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
+  type: module
+
+- url: /hacsfiles/lovelace-multiple-entity-row/multiple-entity-row.js
+  type: module
+
+- url: /hacsfiles/light-entity-row/light-entity-row.js
+  type: module
+
+- url: /hacsfiles/lovelace-paper-buttons-row/paper-buttons-row.js
+  type: module
+                

@@ -3,11 +3,50 @@ icon: mdi:thermostat
 cards:
   - type: vertical-stack
     cards:
-      - type: entities
-        name: Klima
-        entities:
-          - switch.heating_toggle_cooling
-          - switch.heating_floor_pump
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        entity: climate.house_climate
+        # secondary_info: hvac-mode
+
+        temperature:
+          hide: true
+        target_temperature:
+          hide: true
+        fan_mode:
+        toggle:
+          hide: true
+
+        # hvac_mode: 
+        #   hide: true
+      # buttons:
+      #   - entity: switch.heating_toggle_cooling
+      #     state_icons:
+      #       "on":  mdi:snowflake
+      #       "off": mdi:fire
+      #     state_text:
+      #       "on": Kjoler
+      #       "off": Varmer
+      #     state_styles:
+      #       "off": # define a state then provide a style object.
+      #         button:
+      #           background-color: var(--table-row-alternative-background-color)
+      #         name:
+      #           color: red
+      #       "on":
+      #         button:
+      #           background-color: var(--primary-color)
+      #         icon:
+      #           color: var(--paper-item-icon-active-color) # this will change the icon colour when the entities state is on.
+      #         ripple:
+      #           color: blue
+
+      #   - entity: switch.heating_floor_pump
+      #     state_icons:
+      #       "on":  mdi:water
+      #       "off": mdi:water-off
+      #     state_text:
+      #       "on": Gulvpumpe paa
+      #       "off": Gulvpumpe av
 
       - type: glance
         entities:
@@ -15,75 +54,316 @@ cards:
           - sensor.netatmo_lvh_inn_humidity
         show_name: false
         state_color: true
-        
-      - type: entities
-        name: Ventilasjon
-        entities: 
-          - climate.systemair
-        
-      - type: horizontal-stack
-        cards:
-          - type: vertical-stack
-            title: Nede
-            cards:
-              - type: thermostat
-                entity: climate.coridor
-                name: Koridor
-              - type: custom:mini-graph-card
-                entities:
-                -  sensor.heating_valve_feedback_coridor
-                -  climate.coridor.current_temperature
-                # cards:
-                # - type: thermostat
-                #   entity: climate.coridor
-                #   name: Koridor
-                # - type: custom:mini-graph-card
-                #   entities:
-                #   -  sensor.heating_valve_feedback_coridor
+
+      # - type: entities
+      #   name: Ventilasjon
+      #   entities:
+      #     - climate.systemair
+
+      - type: custom:mini-climate
+        entity: climate.systemair
+        fan_mode:
+          # hide: off
+          icon: mdi:fan
+          source:
+            low: low
+            medium: medium
+            high: high
+          # filter usage example
+        #   __filter: >
+        #     (source, state, entity) => entity.attributes
+        #       .fan_modes_al.map(fan_mode => source.find(s => s.id === fan_mode))
+        #       .filter(fan_mode=>fan_mode)
+        # change_action: >
+        #   (selected, state, entity) => this.call_service('climate', 'set_fan_mode', { entity_id: entity.entity_id, fan_mode: selected })
+
+        temperature:
+          unit: '°C'
+        # hvac_modes:
+        #   source:
+        #     'off':
+        #       icon: mdi:power
+        #       name: 'off'
+        #     heat:
+        #       icon: mdi:fire
+        #       name: heat
+        #     cool:
+        #       icon: mdi:snowflake
+        #       name: cool
+        #     dry:
+        #       icon: mdi:water
+        #       name: dry
+        #     fan_only:
+        #       icon: mdi:fan
+        #       name: fan
+        indicators:
+          humidity:
+            icon: mdi:water
+            unit: '%'
 
 
-              - type: thermostat
-                entity: climate.bathroom_d
-                name: Bad nede
-              - type: thermostat
-                entity: climate.washing_room
-                name: Vaskerom
-              - type: thermostat
-                entity: climate.wardrobe
-                name: Grovgarderobe
-              - type: thermostat
-                entity: climate.bedroom_ludvig
-                name: Sov Ludvig
-              - type: thermostat
-                entity: climate.bedroom_lila
-                name: Sov Lila
-              - type: thermostat
-                entity: climate.bedroom_adult
-                name: Sov voksen
-              - type: thermostat
-                entity: climate.ravage
-                name: Herjerom
+  # - type: horizontal-stack
+  #   cards:
+  # - type: entities
+  - type: vertical-stack
+    title: Nede
+    cards:
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.coridor
+        name: Koridor
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.bathroom_d
+        name: Bad nede
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.washing_room
+        name: Vaskerom
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.wardrobe
+        name: Grovgarderobe
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.bedroom_ludvig
+        name: Sov Ludvig
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.bedroom_lila
+        name: Sov Lila
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.bedroom_adult
+        name: Sov voksen
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.ravage
+        name: Herjerom
 
-          - type: vertical-stack
-            title: Oppe
-            cards:
-              - type: thermostat
-                entity: climate.living_area
-                name: Oppholdsrom
-              - type: thermostat
-                entity: climate.bathroom_u
-                name: Bad oppe
-              - type: thermostat
-                entity: climate.bedroom_matilde
-                name: Sov Matilde
+  - type: vertical-stack
+    title: Oppe
+    cards:
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.living_area
+        name: Oppholdsrom
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.bathroom_u
+        name: Bad oppe
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.bedroom_matilde
+        name: Sov Matilde
 
-          - type: vertical-stack
-            title: Andre
-            cards:
-              - type: thermostat
-                entity: climate.verksted
-                name: Verksted
+  - type: vertical-stack
+    title: Andre
+    cards:
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.garage
+        name: Garasje
+      - type: custom:mini-climate
+        icon: mdi:thermostat
+        secondary_info: hvac-mode
+        temperature:
+          unit: '°C'
+        target_temperature:
+        hvac_mode: 
+          hide: true
+          source:
+            heat:
+              icon: mdi:fire
+              name: heat
+            cool:
+              icon: mdi:snowflake
+              name: cool
+        toggle:
+          hide: true
+        entity: climate.verksted
+        name: Verksted
 
-visible:
-  - user: !secret user_id_martin 
-  - user: !secret user_id_trine 
+# visible:
+#   - user: !secret user_id_martin
+#   - user: !secret user_id_trine

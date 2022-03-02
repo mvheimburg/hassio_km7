@@ -26,3 +26,4 @@ themes/
 *.db-shm
 *.db-wal
 .HA-VERSION
+service_account.json

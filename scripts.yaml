@@ -10,19 +10,31 @@ ring_bell_day:
       - d4963bf8143011eb9251c9a5043f99b5
       - d49937dc143011ebb2f20573a3d5520e
       - d4906344143011ebac7ac10e12109ffa
-  - data:
-      media_content_id: https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3
-      media_content_type: music
-    service: media_player.play_media
-    target:
-      device_id:
-      - d4963bf8143011eb9251c9a5043f99b5
-      - d49937dc143011ebb2f20573a3d5520e
-      - d4906344143011ebac7ac10e12109ffa
-  - service: notify.mobile_app_martin_mob
-    data:
-      message: Noen på døren
-      title: DingDong
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: input_select.party_modes
+        state: jul
+      sequence:
+      - service: media_player.play_media
+        target:
+          entity_id:
+          - media_player.kjokken
+          - media_player.kontor
+          - media_player.bad_oppe
+        data:
+          media_content_id: media-source://media_source/local/jingle-bells.mp3
+          media_content_type: music
+    default:
+    - service: media_player.play_media
+      target:
+        entity_id:
+        - media_player.bad_oppe
+        - media_player.kjokken
+        - media_player.kontor
+      data:
+        media_content_id: https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3
+        media_content_type: music
 matilde_alarm:
   alias: matilde_alarm
   sequence:
@@ -54,8 +66,8 @@ ring_bell_night:
   - choose:
     - conditions:
       - condition: state
-        entity_id: input_boolean.halloween_mode
-        state: 'on'
+        entity_id: input_select.party_modes
+        state: halloween
       sequence:
       - service: media_player.play_media
         target:
@@ -65,6 +77,20 @@ ring_bell_night:
           - media_player.bad_oppe
         data:
           media_content_id: media-source://media_source/local/scarecrow.mp3
+          media_content_type: music
+    - conditions:
+      - condition: state
+        entity_id: input_select.party_modes
+        state: jul
+      sequence:
+      - service: media_player.play_media
+        target:
+          entity_id:
+          - media_player.kjokken
+          - media_player.kontor
+          - media_player.bad_oppe
+        data:
+          media_content_id: media-source://media_source/local/jingle-bells.mp3
           media_content_type: music
     default:
     - service: media_player.play_media
@@ -83,7 +109,7 @@ ring_bell_night:
   - choose:
     - conditions:
       - condition: state
-        entity_id: input_boolean.halloween_mode
+        entity_id: input_select.party_modes
         state: 'on'
       sequence:
       - service: light.turn_off
@@ -128,4 +154,30 @@ ring_bell_night:
         entity_id: light.outdoor_main_door
       data:
         brightness_pct: 30
+  mode: single
+open_garage:
+  alias: Open garage
+  sequence:
+  - service: cover.open_cover
+    data: {}
+    target:
+      entity_id: cover.garage_gate
+  mode: single
+close_garage:
+  alias: Close garage
+  sequence:
+  - service: cover.close_cover
+    data: {}
+    target:
+      entity_id: cover.garage_gate
+  mode: single
+all_indoor_lights_off:
+  alias: All indoor lights off
+  sequence:
+  - service: light.turn_off
+    data: {}
+    target:
+      entity_id:
+      - light.downstairs_lights
+      - light.upstairs_lights
   mode: single

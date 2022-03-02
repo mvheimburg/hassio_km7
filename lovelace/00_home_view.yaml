@@ -1,35 +1,72 @@
 title: Home
 icon: mdi:home-lock
 cards:
-  - type: vertical-stack
-    cards:
-      - type: entities
-        title: Lasogsla
-        show_header_toggle: false
+  # - type: vertical-stack
+  #   cards:
+  - type: entities
+    title: Adgangskontroll
+    show_header_toggle: false
+    entities:
+      - entity: lock.main_door
+        type: custom:multiple-entity-row
+
+        name: Front dor
+        toggle: true
         entities:
-          - entity: lock.main_door
-            icon: mdi:home-lock
-            name: Front dor
+          - entity: light.outdoor_main_door
+            name: false
             toggle: true
-          - entity: lock.garage_door
-            icon: mdi:home-lock
-            name: Garasje dor
-            toggle: true
-          - entity: lock.shed_door
-            icon: mdi:home-lock
-            name: Bod dor
-            toggle: true
-      - type: entities
-        title: Garasje
-        show_header_toggle: false
+          - entity: binary_sensor.main_door_open
+            name: false
+
+      - entity: lock.garage_door
+        name: Garasje dor
+        toggle: true
+
+      - entity: lock.shed_door
+        name: Bod dor
+        type: custom:multiple-entity-row
+        toggle: true
         entities:
-          - entity: cover.garage_gate
-            icon: mdi:home-lock
-            name: Garasjeport
-      - type: entities
-        title: Dørstatus
-        show_header_toggle: false
-        entities:
-          - entity: binary_sensor.main_door_closed
-            icon: mdi:door-closed
-            name: Hoved dør
+          - entity: binary_sensor.shed_door_open
+            name: false
+  # - type: entities
+  #   title: Garasje
+  #   show_header_toggle: false
+  #   entities:
+      - entity: cover.garage_gate
+        # icon: mdi:home-lock
+        name: Garasjeport
+  # - type: entities
+  #   title: Dørstatus
+  #   show_header_toggle: false
+  #   entities:
+  #     - entity: binary_sensor.main_door_closed
+  #       icon: mdi:door-closed
+  #       name: Hoved dør
+  - type: entities
+    entities:
+    # - type: horizontal-stack
+    #   cards:
+    - type: custom:button-card
+      name: Stenge hus
+      entity: scene.leave_home
+      icon: mdi:home-export-outline
+      tap_action:
+        action: none
+      hold_action:
+        action: call-service
+        service: scene.turn_on
+        service_data:
+          entity_id: scene.leave_home
+    - type: custom:button-card
+      name: Komme hjem
+      entity: scene.come_home
+      icon: mdi:home-import-outline
+      tap_action:
+        action: none
+      hold_action:
+        action: call-service
+        service: scene.turn_on
+        service_data:
+          entity_id: scene.come_home

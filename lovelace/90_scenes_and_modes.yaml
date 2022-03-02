@@ -4,9 +4,9 @@ cards:
   - type: vertical-stack
     cards:
     - type: entities
-      name: Hollydays
+      name: Festligheter
       entities:
-        - input_boolean.halloween_mode
+        - input_select.party_modes
 
 visible:
   - user: !secret user_id_martin 

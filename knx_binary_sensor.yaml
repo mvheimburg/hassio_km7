@@ -13,7 +13,3 @@
 - name: water.kitchen_fridge
   state_address: '7/0/1'
 
-
-### SCENE TRIGGERS
-- name: scene.living_room_gesture_up
-  state_address: '6/0/0'

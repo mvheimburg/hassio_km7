@@ -308,3 +308,7 @@
     #     {% set setpkt = sensor.heating.valve.setpkt.shed|float %}
     #     {% set feedback = sensor.heating.valve.feedback.shed| float %}
     #     {{ setpkt - feedback }}
+
+    
+# - platform: mqtt_room
+#   device_id: testid

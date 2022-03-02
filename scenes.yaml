@@ -1,9 +1,132 @@
-- id: '1601627604451'
-  name: House shut down
+- id: '1641553007815'
+  name: Come home
   entities:
-    light.all_lights:
-      state: 'off'
-    automation.lock_main_door:
+    lock.main_door:
+      friendly_name: main_door
+      supported_features: 0
+      state: unlocked
+    light.coridor:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: coridor
+      supported_features: 0
       state: 'on'
+    light.living_area_lights:
+      supported_color_modes:
+      - brightness
+      - onoff
+      color_mode: brightness
+      brightness: 255
+      entity_id:
+      - light.kitchen_roof
+      - light.kitchen_island
+      - light.kitchen_manhattan
+      - light.kitchen_dining
+      - light.living_room_tv
+      - light.hallway_stairs
+      - light.hallway_wall
+      icon: mdi:lightbulb-group
+      friendly_name: Living area lights
+      supported_features: 0
+      state: 'on'
+- id: '1641553191341'
+  name: Leave home
+  entities:
+    lock.main_door:
+      friendly_name: main_door
+      supported_features: 0
+      state: locked
+    lock.shed_door:
+      friendly_name: shed_door
+      supported_features: 0
+      state: locked
     cover.garage_gate:
-      state: 'close_cover'
+      friendly_name: garage_gate
+      supported_features: 11
+      state: closed
+    light.upstairs_lights:
+      supported_color_modes:
+      - brightness
+      - onoff
+      entity_id:
+      - light.kitchen_roof
+      - light.kitchen_island
+      - light.kitchen_bench
+      - light.kitchen_manhattan
+      - light.kitchen_dining
+      - light.living_room_tv
+      - light.hallway_stairs
+      - light.hallway_wall
+      - light.office_roof
+      - light.bathroom_u_mirror
+      - light.bathroom_u_roof
+      - light.bathroom_u_pend
+      - light.walk_in
+      - light.bedroom_matilde
+      icon: mdi:lightbulb-group
+      friendly_name: Upstairs lights
+      supported_features: 0
+      state: 'off'
+    light.downstairs_lights:
+      supported_color_modes:
+      - brightness
+      - rgbw
+      entity_id:
+      - light.coridor
+      - light.bathroom_d
+      - light.washing_room
+      - light.wardrobe
+      - light.utility
+      - light.bedroom_ludvig
+      - light.bedroom_lila
+      - light.bedroom_adult
+      - light.playing_room
+      icon: mdi:lightbulb-group
+      friendly_name: Downstairs lights
+      supported_features: 0
+      state: 'off'
+- id: '1644608498822'
+  name: Movie time
+  entities:
+    light.living_area_lights:
+      supported_color_modes:
+      - brightness
+      - onoff
+      color_mode: brightness
+      brightness: 159
+      entity_id:
+      - light.kitchen_roof
+      - light.kitchen_island
+      - light.kitchen_manhattan
+      - light.kitchen_dining
+      - light.living_room_tv
+      - light.hallway_stairs
+      - light.hallway_wall
+      icon: mdi:lightbulb-group
+      friendly_name: Living area lights
+      supported_features: 0
+      state: 'on'
+    light.office_roof:
+      supported_color_modes:
+      - brightness
+      friendly_name: office.roof
+      supported_features: 0
+      state: 'off'
+    media_player.living_room:
+      source_list:
+      - Amazon Prime Video
+      - Disney+
+      - HBO Max
+      - HDMI 2
+      - LG Content Store
+      - NRK TV
+      - Netflix
+      - Spotify - Music and Podcasts
+      - TV 2 Play
+      - YouTube
+      device_class: tv
+      friendly_name: Living Room TV
+      supported_features: 24509
+      state: 'off'
