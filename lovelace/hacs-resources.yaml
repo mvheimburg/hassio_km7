@@ -34,4 +34,12 @@
 
 - url: /hacsfiles/lovelace-paper-buttons-row/paper-buttons-row.js
   type: module
+
+- url: /hacsfiles/slider-button-card/slider-button-card.js
+  type: module
                 
+- url: /hacsfiles/apexcharts-card/apexcharts-card.js
+  type: module
+                
+- url: /hacsfiles/lovelace-plotly-graph-card/plotly-graph-card.js
+  type: module

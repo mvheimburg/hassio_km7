@@ -3,15 +3,15 @@
   state_address: '2/4/0'
   invert: 'true'
 
-- name: heating.cooling_pump
-  address: '2/3/1'
-  state_address: '2/4/1'
-  invert: 'true'
+- name: water.main_valve
+  address: '2/5/1'
+  state_address: '2/6/1'
+  # invert: 'true'
 
-- name: heating.cooling_valves
-  address: '2/5/0'
-  state_address: '2/6/0'
-  invert: 'true'
+# - name: heating.cooling_valves
+#   address: '2/5/0'
+#   state_address: '2/6/0'
+#   invert: 'true'
 
 - name: heating.cooling
   address: '2/0/0'
@@ -86,14 +86,17 @@
 
 
 ### MISC
-- name: gate.garage.down
-  address: '4/1/0'
-  state_address: '4/1/0'
-
 - name: gate.garage.up
-  address: '4/1/1'
-  state_address: '4/1/1'
+  address: '4/1/0'
+  state_address: '4/2/0'
 
+- name: gate.garage.stop
+  address: '4/1/1'
+  state_address: '4/2/1'
+
+- name: gate.garage.down
+  address: '4/1/2'
+  state_address: '4/2/2'
 
 - name: power.compressor
   address: '3/0/8'

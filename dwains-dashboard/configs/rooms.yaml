@@ -1,0 +1,110 @@
+# https://dwainscheeren.github.io/dwains-lovelace-dashboard/configuration/rooms.html
+
+rooms:
+
+  - name: garage
+    title: "Garasje"
+    icon: mdi:garage
+    climate: climate.garage
+    lock: lock.garage_door
+    cover: cover.garage_gate
+
+########### 1 etg
+
+  - name: coridor # Has to use ascii letters only
+    title: "Koridor" # May contain non-ascii letters
+    icon: mdi:key
+    light: light.coridor
+    climate: climate.coridor
+    door: binary_sensor.main_door_open
+    lock: lock.main_door
+
+  - name: bathroom_d
+    title: "Bad nede"
+    icon: mdi:toilet
+    light: light.bathroom_d
+    climate: climate.bathroom_d
+
+  - name: bedroom_ludvig
+    title: "Sov Ludvig"
+    icon: mdi:bed
+    light: light.bedroom_ludvig
+    climate: climate.bedroom_ludvig
+
+  - name: bedroom_lila
+    title: "Sov Lila"
+    icon: mdi:bed
+    light: light.bedroom_lila
+    climate: climate.bedroom_lila
+
+  - name: bedroom_adult
+    title: "Sov Voksen"
+    icon: mdi:bed
+    light: light.bedroom_adult
+    climate: climate.bedroom_adult
+
+  - name: playing_room
+    title: "Herjerom"
+    icon: mdi:slide
+    light: light.g_playing_room
+    climate: climate.ravage
+
+  - name: washing_room
+    title: "Vaskerom"
+    icon: mdi:washing-machine
+    light: light.washing_room
+    climate: climate.washing_room
+
+  - name: wardrobe
+    title: "Grovgarderobe"
+    icon: mdi:wardrobe
+    light: light.washing_room
+    climate: climate.washing_room
+
+########### 2 etg
+
+  - name: kitchen
+    title: "Kjøkken"
+    icon: mdi:chef-hat
+    light: light.g_kitchen_area
+    climate: climate.living_area
+
+  - name: living_area
+    title: "Stue"
+    icon: mdi:sofa
+    light: light.g_living_area
+    climate: climate.living_area
+
+  - name: office
+    title: "Kontor"
+    icon: mdi:chair-rolling
+    light: light.office_roof
+    climate: climate.living_area
+
+  - name: bathroom_u
+    title: "Bad oppe"
+    icon: mdi:shower
+    light: light.g_bathroom_u
+    climate: climate.bathroom_u
+
+  - name: bedroom_matilde
+    title: "Sov Matilde"
+    icon: mdi:bed
+    light: light.bedroom_matilde
+    climate: climate.bedroom_matilde
+
+  - name: walk_in
+    title: "Garderobe"
+    icon: mdi:wardrobe
+    light: light.walk_in
+
+    # more_entities:
+#       columns: 2 #optional
+#       entities:
+#         - entity: sensor.name1
+#         - entity: sensor.name2
+#     page_entities:
+#       columns: 1 #optional
+#       entities:
+#         - entity: sensor.name1
+#         - entity: sensor.name2

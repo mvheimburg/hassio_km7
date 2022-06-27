@@ -5,7 +5,7 @@ cards:
     cards:
       - type: entity-button
         name: Nede
-        entity: light.downstairs_lights
+        entity: light.g_downstairs
         icon: mdi:home-floor-0
         tap_action:
           action: none
@@ -13,10 +13,10 @@ cards:
           action: call-service
           service: light.turn_off
           service_data:
-            entity_id: light.downstairs_lights
+            entity_id: light.g_downstairs
       - type: entity-button
         name: Oppe
-        entity: light.upstairs_lights
+        entity: light.g_upstairs
         icon: mdi:home-floor-1
         tap_action:
           action: none
@@ -24,7 +24,7 @@ cards:
           action: call-service
           service: light.turn_off
           service_data:
-            entity_id: light.upstairs_lights
+            entity_id: light.g_upstairs
 
   - type: vertical-stack
     cards:
@@ -144,7 +144,7 @@ cards:
           icon: mdi:spotlight
           name: Sov Voksen
           toggle: true
-        - entity: light.playing_room
+        - entity: light.g_playing_room
           icon: mdi:led-strip-variant
           name: Herjerom
           toggle: true

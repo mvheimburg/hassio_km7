@@ -1,20 +1,20 @@
 - platform: mqtt
   name: main_door
-  command_topic: "door/1/cmd"
-  state_topic: "door/1/state"
+  command_topic: "door/main/cmd"
+  state_topic: "door/main/state"
   optimistic: false
   qos: 0
 
 - platform: mqtt
   name: garage_door
-  command_topic: "door/2/cmd"
-  state_topic: "door/2/state"
+  command_topic: "door/garage/cmd"
+  state_topic: "door/garage/state"
   optimistic: false
   qos: 0
 
 - platform: mqtt
-  name: shed_door
-  command_topic: "door/3/cmd"
-  state_topic: "door/3/state"
+  name: workshop_door
+  command_topic: "door/workshop/cmd"
+  state_topic: "door/workshop/state"
   optimistic: false
   qos: 0

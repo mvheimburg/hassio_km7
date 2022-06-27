@@ -23,50 +23,121 @@ cards:
         name: Garasje dor
         toggle: true
 
-      - entity: lock.shed_door
+      - entity: lock.workshop_door
         name: Bod dor
         type: custom:multiple-entity-row
         toggle: true
         entities:
-          - entity: binary_sensor.shed_door_open
+          - entity: binary_sensor.workshop_door_open
             name: false
-  # - type: entities
-  #   title: Garasje
-  #   show_header_toggle: false
-  #   entities:
+
       - entity: cover.garage_gate
-        # icon: mdi:home-lock
         name: Garasjeport
-  # - type: entities
-  #   title: Dørstatus
-  #   show_header_toggle: false
-  #   entities:
-  #     - entity: binary_sensor.main_door_closed
-  #       icon: mdi:door-closed
-  #       name: Hoved dør
-  - type: entities
-    entities:
-    # - type: horizontal-stack
-    #   cards:
-    - type: custom:button-card
-      name: Stenge hus
-      entity: scene.leave_home
+
+
+  - type: conditional
+    conditions:
+      - entity: input_select.house_state
+        state_not: Hjemme
+    card:
+      type: custom:button-card
+      name: Komme hjem
+      entity:  input_select.house_state
       icon: mdi:home-export-outline
       tap_action:
-        action: none
-      hold_action:
         action: call-service
-        service: scene.turn_on
+        service: input_select.select_option
         service_data:
-          entity_id: scene.leave_home
-    - type: custom:button-card
-      name: Komme hjem
-      entity: scene.come_home
-      icon: mdi:home-import-outline
-      tap_action:
-        action: none
-      hold_action:
-        action: call-service
-        service: scene.turn_on
-        service_data:
-          entity_id: scene.come_home
+          entity_id: input_select.house_state
+          option: Hjemme
+
+
+
+  - type: conditional
+    conditions:
+      - entity: input_select.house_state
+        state: Hjemme
+    card:
+      type: vertical-stack
+      cards:
+        - type: horizontal-stack
+          cards:
+            - type: custom:button-card
+              name: Forlat hus
+              entity:  input_select.house_state
+              icon: mdi:home-export-outline
+              tap_action:
+                action: call-service
+                service: input_select.select_option
+                service_data:
+                  entity_id: input_select.house_state
+                  option: Borte
+              hold_action:
+                action: call-service
+                service: input_select.select_option
+                service_data:
+                  entity_id: input_select.house_state
+                  option: Ferie
+
+        - type: conditional
+          ## Case Night
+          conditions:
+            - entity: input_select.house_states_home
+              state: Natt
+          card:
+            type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                name: Dag
+                entity:  input_select.house_states_home
+                icon: mdi:home-export-outline
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.house_states_home
+                    option: Dag
+        - type: conditional
+          conditions:
+            - entity: input_select.house_states_home
+              state: Dag
+          card:
+            type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                name: Natt
+                entity:  input_select.house_states_home
+                icon: mdi:home-export-outline
+                tap_action:
+                  action: call-service
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.house_states_home
+                    option: Natt
+              
+        ## Case Spise
+        - type: conditional
+          conditions:
+            - entity: input_select.house_states_home
+              state: Dag
+          card:
+            type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                name: TV
+                entity:  scene.movie_time
+                icon: mdi:home-export-outline
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.movie_time
+              - type: custom:button-card
+                name: Spise
+                entity:  scene.movie_time
+                icon: mdi:home-export-outline
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.movie_time

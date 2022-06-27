@@ -1,0 +1,29 @@
+type: vertical-stack
+cards:
+  - type: entities
+    title: Adgangskontroll
+    show_header_toggle: false
+    entities:
+      - entity: lock.main_door
+        type: custom:multiple-entity-row
+
+        name: Front dor
+        toggle: true
+        entities:
+          - entity: light.outdoor_main_door
+            name: false
+            toggle: true
+          - entity: binary_sensor.main_door_open
+            name: false
+
+      - entity: lock.garage_door
+        name: Garasje dor
+        toggle: true
+
+      - entity: lock.workshop_door
+        name: Bod dor
+        type: custom:multiple-entity-row
+        toggle: true
+        entities:
+          - entity: binary_sensor.shed_door_open
+            name: false

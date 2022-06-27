@@ -1,0 +1,11 @@
+light.g_living_area:
+  friendly_name: Stue område
+
+light.g_kitchen_area:
+  friendly_name: Kjøkken område
+
+light.g_playing_room:
+  friendly_name: Herjerom
+
+light.g_bathroom_u:
+  friendly_name: Bad oppe

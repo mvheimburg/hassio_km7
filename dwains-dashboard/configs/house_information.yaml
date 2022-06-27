@@ -1,0 +1,73 @@
+# https://dwainscheeren.github.io/dwains-lovelace-dashboard/configuration/house_information.html
+
+house_information:
+  favorites:
+  #   - entity: binary_sensor.doorbell_button
+  #     icon_on: mdi:bell
+  #     icon_off: mdi:bell-outline
+  #   - entity: binary_sensor.hallway_door_contact
+  #     icon_on: mdi:door-open
+  #     icon_off: mdi:door-closed
+  #
+  # addons:
+  #   - name: Calendar #This is an example addon see: https://github.com/dwainscheeren/dwains-dashboard-addons/tree/for-1.0/house_information/calendar
+  #     icon: mdi:calendar
+  #     path: 'dwains-dashboard/addons/house_information/calendar/page.yaml'
+  #     data:
+  #       calendars:
+  #         - calendar.gft
+  #         - calendar.oud_papier
+  #         - calendar.pmd_afval
+  #         - calendar.restafval
+
+
+    # - entity: light.outdoor_main_door
+    #   name: false
+    #   toggle: true
+    # - entity: binary_sensor.main_door_open
+    #   name: false
+
+    # - entity: lock.garage_door
+    #   name: Garasje dor
+    #   toggle: true
+
+    # - entity: lock.workshop_door
+
+    # - entity: binary_sensor.workshop_door_open
+    #   name: false
+
+    # - entity: cover.garage_gate
+    #   name: Garasjeport
+
+    # - entity: lock.main_door
+    #   type: custom:multiple-entity-row
+    #   name: Front dor
+    #   toggle: true
+    #   entities:
+    #     - entity: light.outdoor_main_door
+    #       name: false
+    #       toggle: true
+    #     - entity: binary_sensor.main_door_open
+    #       name: false
+
+  addons:
+    - name: Hello house information page
+      icon: mdi:chart
+      path: 'dwains-dashboard/addons/house_information/hello-house-information-page.yaml'
+  
+  
+  
+  # - entity: lock.garage_door
+    #   name: Garasje dor
+    #   toggle: true
+
+    # - entity: lock.workshop_door
+    #   name: Bod dor
+    #   type: custom:multiple-entity-row
+    #   toggle: true
+    #   entities:
+    #     - entity: binary_sensor.workshop_door_open
+    #       name: false
+
+    # - entity: cover.garage_gate
+    #   name: Garasjeport

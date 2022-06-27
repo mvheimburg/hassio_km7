@@ -13,3 +13,8 @@
 - name: water.kitchen_fridge
   state_address: '7/0/1'
 
+- name: heating.cooling_pump
+  state_address: '2/4/1'
+
+- name: heating.cooling_valves
+  state_address: '2/6/0'

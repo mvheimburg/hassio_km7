@@ -1,9 +1,3 @@
-# tunneling:
-#   host: !secret knx_gateway_ip
-  # port: !secret knx_gateway_port
-  # local_ip: !secret homassistant_ip
-  # expose: !include knx_expose.yaml
-
 light: !include knx_light.yaml
 
 sensor: !include knx_sensor.yaml

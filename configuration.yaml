@@ -2,13 +2,15 @@
 default_config:
 
 homeassistant:
-  # packages: !include_dir_named packages
   time_zone: Europe/Oslo
   media_dirs:
     local: /media
   external_url: !secret http_base_url
   internal_url: "http://192.168.1.2:8123"
 # Text to speech
+  customize: !include customize.yaml
+
+
 tts:
   - platform: google_translate
 
@@ -47,6 +49,7 @@ cover:
     state_opening: "opening"
     state_closed: "closed"
     state_closing: "closing"
+    state_stopped: "stopped"
     optimistic: false
     qos: 0
 
@@ -131,3 +134,6 @@ wake_on_lan:
 #       - HDMI 2
 
 google_assistant: !include google_assistant.yaml
+
+rest: !include rest.yaml
+ 

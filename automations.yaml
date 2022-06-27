@@ -268,38 +268,6 @@
     target:
       entity_id: lock.main_door
   mode: single
-- id: '1625170397687'
-  alias: Climate heating on
-  description: cooling/heating pump and valves based on knx controller cooling status
-  trigger:
-  - platform: state
-    entity_id: switch.heating_toggle_cooling
-    from: 'on'
-    to: 'off'
-  condition: []
-  action:
-  - service: switch.turn_off
-    target:
-      entity_id:
-      - switch.heating_cooling_valves
-      - switch.heating_cooling_pump
-  mode: single
-- id: '1625170463811'
-  alias: Climate cooling on
-  description: cooling/heating pump and valves based on knx controller cooling status
-  trigger:
-  - platform: state
-    entity_id: switch.heating_toggle_cooling
-    from: 'off'
-    to: 'on'
-  condition: []
-  action:
-  - service: switch.turn_on
-    target:
-      entity_id:
-      - switch.heating_cooling_pump
-      - switch.heating_cooling_valves
-  mode: single
 - id: '1625428976440'
   alias: Close garage
   description: ''
@@ -384,16 +352,41 @@
     default: []
   mode: single
 - id: '1643977604539'
-  alias: urn On Living Room TV with WakeOnLan
-  description: Turn On Living Room TV with WakeOnLan
-  trigger:
-  - platform: device
-    device_id: 7df70d0f9a325efa7425998e739d48e5
-    domain: webostv
-    type: webostv.turn_on
+  alias: Turn off Living Room TV
+  description: 'Turn off Living Room TV '
+  trigger: []
   condition: []
   action:
-  - service: wake_on_lan.send_magic_packet
-    data:
-      mac: 64:95:6c:14:0c:4c
+  - service: media_player.turn_off
+    data: {}
+    target:
+      entity_id: media_player.living_room
+  mode: single
+- id: '1649660843161'
+  alias: Night mode
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.house_states_home
+    to: Natt
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.leave_home
+    metadata: {}
+  mode: single
+- id: '1649660876097'
+  alias: Day mode
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.house_states_home
+    to: Natt
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.come_home
+    metadata: {}
   mode: single

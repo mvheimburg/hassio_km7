@@ -1,0 +1,61 @@
+
+- scan_interval: 600
+  method: GET
+  headers:
+    Content-Type: application/json
+    X-API-KEY: 2CD114509703F6E0A976C32FCB79C4F62966EEC6
+    User-Agent: Drivstoffappen/1.3.8 (com.raskebiler.drivstoff.appen; build:130; iOS 15.2.1) Alamofire/5.4.4
+    Accept-Language: nb-NO;q=1.0, en-GB;q=0.9
+    Accept-Encoding: br;q=1.0, gzip;q=0.9, deflate;q=0.8
+    Connection: keep-alive
+  resource: https://api.drivstoffappen.no/api/stations?stationType=0&countryCode=NO
+  sensor:
+    - name: "Fuel Uno-X Levanger"
+      json_attributes_path: "$..[?(@.name=='Uno-X Levanger')].stationDetails..[?(@.type=='D')]"
+      value_template: "{{ state_attr('sensor.fuel_uno_x_levanger', 'price') }}"
+      force_update: true
+      json_attributes:
+        - "price"
+        - "lastUpdated"
+    - name: "Fuel YX Levanger"
+      json_attributes_path: "$..[?(@.name=='YX 7-Eleven Levanger')].stationDetails..[?(@.type=='D')]"
+      value_template: "{{ state_attr('sensor.fuel_yx_levanger', 'price') }}"
+      force_update: true
+      json_attributes:
+        - "price"
+        - "lastUpdated"
+    - name: "Fuel YX Gråmyra"
+      json_attributes_path: "$..[?(@.name=='YX Gråmyra')].stationDetails..[?(@.type=='D')]"
+      value_template: "{{ state_attr('sensor.fuel_yx_gramyra', 'price') }}"
+      force_update: true
+      json_attributes:
+        - "price"
+        - "lastUpdated"
+    - name: "Fuel Cirkle-K Moan"
+      json_attributes_path: "$..[?(@.id==63)].stationDetails..[?(@.type=='D')]"
+      value_template: "{{ state_attr('sensor.fuel_cirkle_k_moan', 'price') }}"
+      force_update: true
+      json_attributes:
+        - "price"
+        - "lastUpdated"
+    - name: "Fuel Cirkle-K Magneten"
+      json_attributes_path: "$..[?(@.id==57)].stationDetails..[?(@.type=='D')]"
+      value_template: "{{ state_attr('sensor.fuel_cirkle_k_magneten', 'price') }}"
+      force_update: true
+      json_attributes:
+        - "price"
+        - "lastUpdated"
+    # - name: "Uno-X Rustad"
+    #   json_attributes_path: "$..[?(@.name=='Uno-X Rustad')].stationDetails..[?(@.type=='D')]"
+    #   force_update: true
+    #   value_template: "{{ state_attr('sensor.uno_x_rustad', 'price') }}"
+    #   json_attributes:
+    #     - "price"
+    #     - "lastUpdated"
+    # - name: "Circle K Abildsø"
+    #   json_attributes_path: "$..[?(@.name=='Circle K Abildsø')].stationDetails..[?(@.type=='D')]"
+    #   force_update: true
+    #   value_template: "{{ state_attr('sensor.circle_k_abildso', 'price') }}"
+    #   json_attributes:
+    #     - "price"
+    #     - "lastUpdated"

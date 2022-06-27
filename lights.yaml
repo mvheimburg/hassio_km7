@@ -1,5 +1,5 @@
 - platform: group
-  name: playing_room
+  name: g_playing_room
   entities:
     - light.playing_room_1
     - light.playing_room_2
@@ -14,7 +14,7 @@
   qos: 0
 
 - platform: group
-  name: 'Downstairs lights'
+  name: g_downstairs
   entities:
     - light.coridor
     - light.bathroom_d
@@ -27,7 +27,7 @@
     - light.playing_room
     
 - platform: group
-  name: 'Upstairs lights'
+  name: g_upstairs
   entities:
     - light.kitchen_roof     
     - light.kitchen_island   
@@ -45,27 +45,27 @@
     - light.bedroom_matilde  
 
 - platform: group
-  name: 'Outdoor lights'
+  name: g_outdoor
   entities:
     - light.outdoor_main_door
     - light.outdoor_nude
 
 - platform: group
-  name: 'All lights'
+  name: g_all
   entities:
-      - light.downstairs_lights
-      - light.upstairs_lights
-      - light.outdoor_lights
+      - light.g_downstairs
+      - light.g_upstairs
+      - light.g_outdoor
 
 - platform: group
-  name: 'Bathroom U lights'
+  name: g_bathroom_u
   entities:
     - light.bathroom_u_mirror  
     - light.bathroom_u_roof  
     - light.bathroom_u_pend 
 
 - platform: group
-  name: 'Living area lights'
+  name: g_living_area
   entities:
     - light.kitchen_roof     
     - light.kitchen_island   
@@ -73,4 +73,12 @@
     - light.kitchen_dining   
     - light.living_room_tv   
     - light.hallway_stairs   
-    - light.hallway_wall     
+    - light.hallway_wall
+
+- platform: group
+  name: g_kitchen_area
+  entities:
+    - light.kitchen_roof     
+    - light.kitchen_island   
+    - light.kitchen_manhattan
+    - light.kitchen_dining     

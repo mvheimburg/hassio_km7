@@ -38,55 +38,53 @@
       friendly_name: main_door
       supported_features: 0
       state: locked
-    lock.shed_door:
-      friendly_name: shed_door
+    lock.workshop_door:
+      friendly_name: workshop_door
       supported_features: 0
       state: locked
     cover.garage_gate:
       friendly_name: garage_gate
       supported_features: 11
       state: closed
-    light.upstairs_lights:
+    light.g_all:
       supported_color_modes:
       - brightness
       - onoff
       entity_id:
-      - light.kitchen_roof
-      - light.kitchen_island
-      - light.kitchen_bench
-      - light.kitchen_manhattan
-      - light.kitchen_dining
-      - light.living_room_tv
-      - light.hallway_stairs
-      - light.hallway_wall
-      - light.office_roof
-      - light.bathroom_u_mirror
-      - light.bathroom_u_roof
-      - light.bathroom_u_pend
-      - light.walk_in
-      - light.bedroom_matilde
+      - light.g_downstairs
+      - light.g_upstairs
+      - light.g_outdoor
       icon: mdi:lightbulb-group
-      friendly_name: Upstairs lights
+      friendly_name: g_all
       supported_features: 0
       state: 'off'
-    light.downstairs_lights:
-      supported_color_modes:
-      - brightness
-      - rgbw
-      entity_id:
-      - light.coridor
-      - light.bathroom_d
-      - light.washing_room
-      - light.wardrobe
-      - light.utility
-      - light.bedroom_ludvig
-      - light.bedroom_lila
-      - light.bedroom_adult
-      - light.playing_room
-      icon: mdi:lightbulb-group
-      friendly_name: Downstairs lights
-      supported_features: 0
+    media_player.living_room:
+      source_list:
+      - Amazon Prime Video
+      - Disney+
+      - HBO Max
+      - HDMI 2
+      - LG Content Store
+      - NRK TV
+      - Netflix
+      - Spotify - Music and Podcasts
+      - TV 2 Play
+      - YouTube
+      assumed_state: true
+      device_class: tv
+      friendly_name: Living Room TV
+      supported_features: 24377
       state: 'off'
+    input_boolean.alarm_matilde_state:
+      editable: true
+      icon: mdi:alarm-note
+      friendly_name: Deaktivere
+      state: 'off'
+  metadata:
+    input_boolean.alarm_matilde_state:
+      entity_only: true
+    media_player.living_room:
+      entity_only: false
 - id: '1644608498822'
   name: Movie time
   entities:
