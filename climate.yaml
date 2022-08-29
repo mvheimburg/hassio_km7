@@ -108,5 +108,6 @@
       entity_id: switch.heating_toggle_cooling
       state: "on"
 
-- platform: systemair
-  slave: 1
+# - platform: systemair
+#   slave: 1
+#   name: ventilation

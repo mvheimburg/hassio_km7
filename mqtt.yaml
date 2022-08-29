@@ -1,0 +1,30 @@
+lock:
+  - name: main_door
+    command_topic: "door/main/cmd"
+    state_topic: "door/main/state"
+    optimistic: false
+    qos: 0
+
+  - name: garage_door
+    command_topic: "door/garage/cmd"
+    state_topic: "door/garage/state"
+    optimistic: false
+    qos: 0
+
+  - name: workshop_door
+    command_topic: "door/workshop/cmd"
+    state_topic: "door/workshop/state"
+    optimistic: false
+    qos: 0
+
+cover:
+  - name: garage_gate
+    command_topic: "garage/gate/cmd"
+    state_topic: "garage/gate/state"
+    state_open: "open"
+    state_opening: "opening"
+    state_closed: "closed"
+    state_closing: "closing"
+    state_stopped: "stopped"
+    optimistic: false
+    qos: 0
