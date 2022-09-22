@@ -128,3 +128,171 @@
       friendly_name: Living Room TV
       supported_features: 24509
       state: 'off'
+- id: '1663763916061'
+  name: Vacation
+  entities:
+    lock.main_door:
+      friendly_name: main_door
+      supported_features: 0
+      state: locked
+    lock.workshop_door:
+      friendly_name: workshop_door
+      supported_features: 0
+      state: locked
+    cover.garage_gate:
+      friendly_name: garage_gate
+      supported_features: 11
+      state: open
+    light.g_all:
+      supported_color_modes:
+      - brightness
+      - onoff
+      entity_id:
+      - light.g_downstairs
+      - light.g_upstairs
+      - light.g_outdoor
+      icon: mdi:lightbulb-group
+      friendly_name: g_all
+      supported_features: 0
+      state: 'off'
+    media_player.living_room:
+      assumed_state: true
+      device_class: tv
+      friendly_name: Living Room TV
+      supported_features: 24377
+      state: 'off'
+    input_boolean.alarm_matilde_state:
+      editable: true
+      icon: mdi:alarm-note
+      friendly_name: Deaktivere
+      state: 'off'
+    switch.water_main_valve:
+      friendly_name: water.main_valve
+      state: 'on'
+  metadata:
+    input_boolean.alarm_matilde_state:
+      entity_only: true
+    switch.water_main_valve:
+      entity_only: true
+- id: '1663829022755'
+  name: Night
+  entities:
+    lock.main_door:
+      friendly_name: main_door
+      supported_features: 0
+      state: locked
+    lock.workshop_door:
+      friendly_name: workshop_door
+      supported_features: 0
+      state: locked
+    cover.garage_gate:
+      friendly_name: garage_gate
+      supported_features: 11
+      state: closed
+    light.g_all:
+      supported_color_modes:
+      - brightness
+      - onoff
+      color_mode: brightness
+      brightness: 234
+      entity_id:
+      - light.g_downstairs
+      - light.g_upstairs
+      - light.g_outdoor
+      icon: mdi:lightbulb-group
+      friendly_name: g_all
+      supported_features: 0
+      state: 'on'
+    media_player.living_room:
+      source_list:
+      - Disney+
+      - HBO Max
+      - HDMI 2
+      - LG Content Store
+      - NRK TV
+      - Netflix
+      - Spotify - Music and Podcasts
+      - TV 2 Play
+      - YouTube
+      assumed_state: true
+      device_class: tv
+      friendly_name: Living Room TV
+      supported_features: 24377
+      state: 'off'
+    input_boolean.alarm_matilde_state:
+      editable: true
+      icon: mdi:alarm-note
+      friendly_name: Deaktivere
+      state: 'off'
+  metadata:
+    input_boolean.alarm_matilde_state:
+      entity_only: true
+- id: '1663829256364'
+  name: Day
+  entities:
+    light.coridor:
+      supported_color_modes:
+      - brightness
+      friendly_name: Koridor
+      supported_features: 0
+      color_mode: brightness
+      brightness: 166
+      state: 'on'
+    light.hallway_stairs:
+      supported_color_modes:
+      - brightness
+      friendly_name: hallway.stairs
+      supported_features: 0
+      color_mode: brightness
+      brightness: 166
+      state: 'on'
+    light.hallway_wall:
+      supported_color_modes:
+      - onoff
+      friendly_name: hallway.wall
+      supported_features: 0
+      color_mode: onoff
+      state: 'on'
+    light.kitchen_manhattan:
+      supported_color_modes:
+      - brightness
+      friendly_name: kitchen.manhattan
+      supported_features: 0
+      color_mode: brightness
+      brightness: 153
+      state: 'on'
+    light.kitchen_roof:
+      supported_color_modes:
+      - brightness
+      friendly_name: kitchen.roof
+      supported_features: 0
+      color_mode: brightness
+      brightness: 166
+      state: 'on'
+    light.living_room_tv:
+      supported_color_modes:
+      - brightness
+      friendly_name: living_room.tv
+      supported_features: 0
+      color_mode: brightness
+      brightness: 166
+      state: 'on'
+    lock.main_door:
+      friendly_name: main_door
+      supported_features: 0
+      state: unlocked
+  metadata:
+    light.coridor:
+      entity_only: true
+    light.hallway_stairs:
+      entity_only: true
+    light.hallway_wall:
+      entity_only: true
+    light.kitchen_manhattan:
+      entity_only: true
+    light.kitchen_roof:
+      entity_only: true
+    light.living_room_tv:
+      entity_only: true
+    lock.main_door:
+      entity_only: true

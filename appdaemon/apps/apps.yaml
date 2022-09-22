@@ -1,7 +1,6 @@
----
-hello_world:
-  module: hello
-  class: HelloWorld
+# hello_world:
+#   module: hello
+#   class: HelloWorld
 
 # halloween_door:
 #   module: candle_light
@@ -10,3 +9,22 @@ hello_world:
 #   trigger_entity: input_select.halloween_mode
 #   strobe_condition_entity: input_select.main_door_just_opened
   
+SystemAirCO2:
+  module: systemair_cotwo
+  class: systemair_cotwo
+  sensor: sensor.netatmo_lvh_inn_co2
+  systemair: climate.systemair
+
+HouseState:
+  module: house_state
+  class: house_state
+  state_input: input_select.house_state
+  state_home_input: input_select.house_states_home
+  door_lock: lock.main_door
+  garage_gate: cover.garage_gate
+  scenes:
+    leave_home: scene.leave_home
+    come_home: scene.come_home
+    vacation: scene.vacation
+    day: scene.day
+    night: scene.night

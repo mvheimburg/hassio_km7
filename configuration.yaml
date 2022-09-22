@@ -30,28 +30,21 @@ http:
   cors_allowed_origins:
     - https://api.home-connect.com
 
-# influxdb: !include influxdb.yaml
 
-# mqtt:
-#   broker: a0d7b954-mqtt
-#   username: !secret mqtt_username
-#   password: !secret mqtt_password
-#   client_id: home-assistant
+mqtt: !include mqtt.yaml
 
-lock: !include locks.yaml
-
-cover:
-  - platform: mqtt
-    name: garage_gate
-    command_topic: "garage/gate/cmd"
-    state_topic: "garage/gate/state"
-    state_open: "open"
-    state_opening: "opening"
-    state_closed: "closed"
-    state_closing: "closing"
-    state_stopped: "stopped"
-    optimistic: false
-    qos: 0
+# cover:
+#   - platform: mqtt
+#     name: garage_gate
+#     command_topic: "garage/gate/cmd"
+#     state_topic: "garage/gate/state"
+#     state_open: "open"
+#     state_opening: "opening"
+#     state_closed: "closed"
+#     state_closing: "closing"
+#     state_stopped: "stopped"
+#     optimistic: false
+#     qos: 0
 
 media_player:
 # !include mediaplayer.yaml
@@ -77,13 +70,13 @@ lovelace:
 # password: !secret huahuacaocao_password
 # region: EU
 
-home_connect:
-  client_id: !secret homeconnect_client_id
-  client_secret: !secret homeconnect_client_secret
+# home_connect:
+#   client_id: !secret homeconnect_client_id
+#   client_secret: !secret homeconnect_client_secret
 
-spotify:
-  client_id: !secret spotify_client_id
-  client_secret: !secret spotify_client_secret
+# spotify:
+#   client_id: !secret spotify_client_id
+#   client_secret: !secret spotify_client_secret
 
 sensor: !include sensors.yaml
 
