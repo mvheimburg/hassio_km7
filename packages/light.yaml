@@ -1,0 +1,62 @@
+light:
+  - platform: group
+    name: 'Downstairs lights'
+    entities:
+      - light.coridor
+      - light.bathroom_d
+      - light.washing_room
+      - light.wardrobe
+      - light.utility
+      - light.bedroom_ludvig
+      - light.bedroom_lila
+      - light.bedroom_adult
+      - light.playing_room
+      
+  - platform: group
+    name: 'Upstairs lights'
+    entities:
+      - light.kitchen_roof     
+      - light.kitchen_island   
+      - light.kitchen_bench  
+      - light.kitchen_manhattan
+      - light.kitchen_dining   
+      - light.living_room_tv   
+      - light.hallway_stairs   
+      - light.hallway_wall     
+      - light.office_roof  
+      - light.bathroom_u_mirror  
+      - light.bathroom_u_roof  
+      - light.bathroom_u_pend  
+      - light.walk_in          
+      - light.bedroom_matilde  
+
+  - platform: group
+    name: 'Outdoor lights'
+    entities:
+      - light.outdoor_main_door
+      - light.outdoor_nude
+
+  - platform: group
+    name: 'All lights'
+    entities:
+       - light.downstairs_lights
+       - light.upstairs_lights
+       - light.outdoor_lights
+
+  - platform: group
+    name: 'Bathroom U lights'
+    entities:
+      - light.bathroom_u_mirror  
+      - light.bathroom_u_roof  
+      - light.bathroom_u_pend 
+
+  - platform: group
+    name: 'Living area lights'
+    entities:
+      - light.kitchen_roof     
+      - light.kitchen_island   
+      - light.kitchen_manhattan
+      - light.kitchen_dining   
+      - light.living_room_tv   
+      - light.hallway_stairs   
+      - light.hallway_wall     

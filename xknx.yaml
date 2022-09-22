@@ -1,0 +1,105 @@
+general:
+    own_address: '15.15.249'
+
+connection:
+    auto:
+#     tunneling:
+#         gateway_ip: !secret knx_gateway_ip
+#         gateway_port: !secret knx_gateway_port
+
+groups:
+
+    sensor:
+        ### HEATING VALVES ###
+        heating.valve.setpkt.coridor: {group_address_state: '1/0/100', value_type: 'percent'}
+        heating.valve.feedback.coridor: {group_address_state: '1/1/100', value_type: 'percent'}
+
+        heating.valve.setpkt.play1: {group_address_state: '1/0/180', value_type: 'percent'}
+        heating.valve.setpkt.play2: {group_address_state: '1/0/181', value_type: 'percent'}
+        heating.valve.feedback.play1: {group_address_state: '1/1/180', value_type: 'percent'}
+        heating.valve.feedback.play2: {group_address_state: '1/1/181', value_type: 'percent'}
+
+        heating.valve.setpkt.kitchen: {group_address_state: '1/0/200', value_type: 'percent'}
+        heating.valve.feedback.kitchen: {group_address_state: '1/1/200', value_type: 'percent'}
+
+        heating.valve.setpkt.living1: {group_address_state: '1/0/210', value_type: 'percent'}
+        heating.valve.setpkt.living2: {group_address_state: '1/0/211', value_type: 'percent'}
+        heating.valve.setpkt.stairway: {group_address_state: '1/0/212', value_type: 'percent'}
+        heating.valve.feedback.living1: {group_address_state: '1/1/210', value_type: 'percent'}
+        heating.valve.feedback.living2: {group_address_state: '1/1/211', value_type: 'percent'}
+        heating.valve.feedback.stairway: {group_address_state: '1/1/212', value_type: 'percent'}
+
+        ### POWER ###
+        power.current.feedback.rack:                {group_address_state: '3/2/0', value_type: 'DPT-7'}
+        power.current.feedback.dishwasher:          {group_address_state: '3/2/1', value_type: 'DPT-7'}
+        power.current.feedback.fridge:                {group_address_state: '3/2/2', value_type: 'DPT-7'}
+        power.current.feedback.combioven_fridgeroom:    {group_address_state: '3/2/3', value_type: 'DPT-7'}
+        power.current.feedback.coffe_oven:          {group_address_state: '3/2/4', value_type: 'DPT-7'}
+        power.current.feedback.washingmachine1:     {group_address_state: '3/2/5', value_type: 'DPT-7'}
+        power.current.feedback.washingmachine2:     {group_address_state: '3/2/6', value_type: 'DPT-7'}
+        power.current.feedback.ventilation:         {group_address_state: '3/2/7', value_type: 'DPT-7'}
+        
+        power.energy.feedback.rack:                 {group_address_state: '3/3/0', value_type: 'DPT-12'}
+        power.energy.feedback.dishwasher:           {group_address_state: '3/3/1', value_type: 'DPT-12'}
+        power.energy.feedback.fridge:                 {group_address_state: '3/3/2', value_type: 'DPT-12'}
+        power.energy.feedback.combioven_fridgeroom:     {group_address_state: '3/3/3', value_type: 'DPT-12'}
+        power.energy.feedback.coffe_oven:           {group_address_state: '3/3/4', value_type: 'DPT-12'}
+        power.energy.feedback.washingmachine1:      {group_address_state: '3/3/5', value_type: 'DPT-12'}
+        power.energy.feedback.washingmachine2:      {group_address_state: '3/3/6', value_type: 'DPT-12'}
+        power.energy.feedback.ventilation:          {group_address_state: '3/3/7', value_type: 'DPT-12'}
+
+
+    switch:
+
+        power.switch.rack:                 {group_address: '3/0/0', group_address_state: '3/1/0'}
+        power.switch.dishwasher:           {group_address: '3/0/1', group_address_state: '3/1/1'}
+        power.switch.fridge:                 {group_address: '3/0/2', group_address_state: '3/1/2'}
+        power.switch.combioven_fridgeroom:     {group_address: '3/0/3', group_address_state: '3/1/3'}
+        power.switch.coffe_oven:            {group_address: '3/0/4', group_address_state: '3/1/4'}
+        power.switch.washingmachine1:      {group_address: '3/0/5', group_address_state: '3/1/5'}
+        power.switch.washingmachine2:      {group_address: '3/0/6', group_address_state: '3/1/6'}
+        power.switch.ventilation:          {group_address: '3/0/7', group_address_state: '3/1/7'}
+
+
+        
+    light:
+        coridor:            {group_address_switch: '0/0/100', group_address_switch_state: '0/1/100', group_address_brightness: '0/3/100', group_address_brightness_state: '0/4/100'}
+        bathroom_d:         {group_address_switch: '0/0/110', group_address_switch_state: '0/1/110', group_address_brightness: '0/3/110', group_address_brightness_state: '0/4/110'}
+        washing_room:       {group_address_switch: '0/0/120', group_address_switch_state: '0/1/120', group_address_brightness: '0/3/120', group_address_brightness_state: '0/4/120'}
+        wardrobe:           {group_address_switch: '0/0/130', group_address_switch_state: '0/1/130', group_address_brightness: '0/3/130', group_address_brightness_state: '0/4/130'}
+        utility:            {group_address_switch: '0/0/140', group_address_switch_state: '0/1/140', group_address_brightness: '0/3/140', group_address_brightness_state: '0/4/140'}
+        bedroom.ludvig:     {group_address_switch: '0/0/150', group_address_switch_state: '0/1/150', group_address_brightness: '0/3/150', group_address_brightness_state: '0/4/150'}
+        bedroom.lila:       {group_address_switch: '0/0/160', group_address_switch_state: '0/1/160', group_address_brightness: '0/3/160', group_address_brightness_state: '0/4/160'}
+        bedroom.adult:      {group_address_switch: '0/0/170', group_address_switch_state: '0/1/170', group_address_brightness: '0/3/170', group_address_brightness_state: '0/4/170'}
+        ravage:             {group_address_switch: '0/0/180', group_address_switch_state: '0/1/180', group_address_brightness: '0/3/180', group_address_brightness_state: '0/4/180'}
+        kitchen.roof:       {group_address_switch: '0/0/200', group_address_switch_state: '0/1/200', group_address_brightness: '0/3/200', group_address_brightness_state: '0/4/200'}
+        kitchen.bench:       {group_address_switch: '0/0/201', group_address_switch_state: '0/1/201', group_address_brightness: '0/3/201', group_address_brightness_state: '0/4/201'}
+        kitchen.island:     {group_address_switch: '0/0/202', group_address_switch_state: '0/1/202'}
+        kitchen.manhattan:  {group_address_switch: '0/0/204', group_address_switch_state: '0/1/204', group_address_brightness: '0/3/204', group_address_brightness_state: '0/4/204'}
+        kitchen.dining:     {group_address_switch: '0/0/205', group_address_switch_state: '0/1/205'}
+        living_room.tv:     {group_address_switch: '0/0/210', group_address_switch_state: '0/1/210', group_address_brightness: '0/3/210', group_address_brightness_state: '0/4/210'}
+        hallway.stairs:     {group_address_switch: '0/0/211', group_address_switch_state: '0/1/211', group_address_brightness: '0/3/211', group_address_brightness_state: '0/4/211'}
+        hallway.wall:       {group_address_switch: '0/0/213', group_address_switch_state: '0/1/213'}
+        bathroom_u.roof:    {group_address_switch: '0/0/230', group_address_switch_state: '0/1/230', group_address_brightness: '0/3/230', group_address_brightness_state: '0/4/230'}
+        bathroom_u.pend:    {group_address_switch: '0/0/231', group_address_switch_state: '0/1/231'}
+        bathroom_u.mirror:  {group_address_switch: '0/0/232', group_address_switch_state: '0/1/232', group_address_brightness: '0/3/232', group_address_brightness_state: '0/4/232'}
+        walk_in:            {group_address_switch: '0/0/240', group_address_switch_state: '0/1/240'}
+        bedroom.matilde:    {group_address_switch: '0/0/250', group_address_switch_state: '0/1/250', group_address_brightness: '0/3/250', group_address_brightness_state: '0/4/250'}
+
+
+    binary_sensor:
+        door_lock.main: {group_address_state: '4/0/0'}
+
+        
+    # climate:
+    #     temperature.coridor:            {group_address_temperature: '1/3/100', group_address_target_temperature_state: '1/2/100'}
+    #     temperature.bathroom_d:         {group_address_temperature: '1/3/110', group_address_target_temperature_state: '1/2/110'}
+    #     temperature.washing_room:       {group_address_temperature: '1/3/120', group_address_target_temperature_state: '1/2/120'}
+    #     temperature.wardrobe:           {group_address_temperature: '1/3/130', group_address_target_temperature_state: '1/2/120'}
+    #     temperature.bedroom.ludvig:     {group_address_temperature: '1/3/150', group_address_target_temperature_state: '1/2/150'}
+    #     temperature.bedroom.lila:       {group_address_temperature: '1/3/160', group_address_target_temperature_state: '1/2/160'}
+    #     temperature.bedroom.adult:      {group_address_temperature: '1/3/170', group_address_target_temperature_state: '1/2/170'}
+    #     temperature.ravage:             {group_address_temperature: '1/3/180', group_address_target_temperature_state: '1/2/180'}
+    #     temperature.living_area:        {group_address_temperature: '1/3/210', group_address_target_temperature_state: '1/2/210'}
+    #     temperature.bathroom_u:         {group_address_temperature: '1/3/230', group_address_target_temperature_state: '1/2/230'}
+    #     temperature.bedroom.matilde:    {group_address_temperature: '1/3/240', group_address_target_temperature_state: '1/2/240'}
